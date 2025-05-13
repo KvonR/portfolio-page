@@ -18,7 +18,7 @@ const Contact = () => {
 
   return (
     <section id="contact">
-      <h2>Contact</h2>
+      <h2 className="section-header">Contact</h2>
       <form onSubmit={handleSubmit}>
         <label>
           Name:

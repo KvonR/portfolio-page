@@ -26,7 +26,7 @@ const Experience = () => {
 
   return (
     <section id="experience">
-      <h2>My Experience</h2>
+      <h2 className="section-header">My Experience</h2>
       <div className="experience-list">
         {experiences.map(exp => (
           <div key={exp.id} className="experience-item">

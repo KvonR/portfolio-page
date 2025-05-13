@@ -24,13 +24,25 @@
                0 0 30px rgba(0, 240, 255, 0.5); /* More layered glow */
 }
 
+/* Add hover effect for the Creative Web Solutions text */
+.home-content h1:hover {
+  color: #ff00ff; /* Hot pink/purple color */
+  text-shadow: 0 0 15px rgba(255, 0, 255, 0.8),
+               0 0 30px rgba(255, 0, 255, 0.6);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Ensure the paragraph is centered and aligned properly */
 .home-content p {
   font-size: 1.4em;
-  margin-bottom: 35px;
+  margin-top: 10px; /* Move the text closer to the title */
+  margin-bottom: 50px; /* Add spacing between the text and the button */
   color: #E0E0E0;
   max-width: 700px;
   line-height: 1.8;
   font-family: 'Segoe UI', 'Roboto', sans-serif; /* Softer font for paragraph */
+  text-align: center;
+  margin: 0 auto;
 }
 
 .btn {
@@ -48,6 +60,7 @@
   box-shadow: 0 0 10px rgba(0, 240, 255, 0.7), 
               0 0 20px rgba(0, 240, 255, 0.5);
   transform: perspective(1px) translateZ(0); /* Smooth animation */
+  margin-top: 20px; /* Move the button lower */
 }
 
 .btn:hover {
@@ -58,13 +71,24 @@
   transform: scale(1.05);
 }
 
-/* Typewriter animation styles */
+/* Ensure the typewriter effect is above the canvas */
 .typewriter-animated {
+  position: relative;
+  z-index: 15; /* Higher z-index to ensure visibility */
   display: inline-block;
-  border-right: 2px solid #00f0ff;
-  white-space: nowrap;
   overflow: hidden;
-  animation: blink-caret 0.7s step-end infinite;
+  white-space: nowrap;
+  border-right: 2px solid #00f0ff;
+  animation: typing 3s steps(30, end), blink-caret 0.7s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 @keyframes blink-caret {
@@ -76,14 +100,27 @@
   }
 }
 
-/* Animation for the rest of the home content (fade-in and slide-up) */
+/* Ensure the home content is fully visible and above the canvas */
 .home-content {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  position: relative;
+  z-index: 10; /* Higher z-index to ensure visibility */
+  opacity: 1; /* Ensure it starts visible */
+  transform: none; /* Remove any initial offset */
+  transition: none; /* Disable transitions temporarily */
 }
 
+/* Re-enable transitions for animations */
 .home-content.home-content-animated {
-  opacity: 1;
-  transform: translateY(0);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* Styling for the neon particle canvas */
+.neon-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: #000;
 }

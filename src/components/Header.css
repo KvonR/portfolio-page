@@ -37,3 +37,19 @@ nav ul li a.active /* Assuming an active class for current page */ {
   color: #ff00ff; /* Hot Pink */
   text-shadow: 0 0 8px #ff00ff, 0 0 12px #ff00ff, 0 0 2px #fff;
 }
+
+/* Add hover effect for all headings */
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
+  color: #ff00ff; /* Hot pink/purple color */
+  text-shadow: 0 0 15px rgba(255, 0, 255, 0.8),
+               0 0 30px rgba(255, 0, 255, 0.6);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Add hover effect for section headers */
+.section-header:hover {
+  color: #ff00ff; /* Hot pink/purple color */
+  text-shadow: 0 0 15px rgba(255, 0, 255, 0.8),
+               0 0 30px rgba(255, 0, 255, 0.6);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}

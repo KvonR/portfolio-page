@@ -19,3 +19,10 @@
   margin: 0 auto 20px auto;
   font-size: 1.2em;
 }
+
+.section-header:hover {
+  color: #ff00ff; /* Hot pink/purple color */
+  text-shadow: 0 0 15px rgba(255, 0, 255, 0.8),
+               0 0 30px rgba(255, 0, 255, 0.6);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}

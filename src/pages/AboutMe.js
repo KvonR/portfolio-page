@@ -4,7 +4,7 @@ import './AboutMe.css';
 const AboutMe = () => {
   return (
     <section id="about-me">
-      <h2>About Me</h2>
+      <h2 className="section-header">About Me</h2>
       <p>
         Hi, I'm Kevin Rahimi — a passionate and versatile developer with a first-class BSc in Computer Science from the University of Liverpool. I thrive on solving problems through clean, efficient code and have experience across a range of technologies, from Java and Spring Boot to Python, Laravel, and React Native.
       </p>
