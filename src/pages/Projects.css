@@ -6,17 +6,19 @@
   font-family: 'Orbitron', sans-serif;
 }
 
-#projects h2 {
+#projects h2.section-header { /* MODIFIED: Combined with .section-header and added transition */
   font-size: 3em;
   margin-bottom: 50px;
   color: #FFFFFF;
   text-shadow: 0 0 8px #00f0ff, 0 0 12px #00f0ff, 0 0 2px #fff;
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* ADDED transition */
 }
 
 .project-list {
   display: grid; /* Using grid for more complex layouts if needed */
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
   gap: 35px;
+  transform: scale(1.05);
 }
 
 .project-item {
@@ -83,9 +85,9 @@
   transform: scale(1.05);
 }
 
-.section-header:hover {
+/* MODIFIED: Made selector more specific and removed the old generic .section-header:hover */
+#projects h2.section-header:hover {
   color: #ff00ff; /* Hot pink/purple color */
   text-shadow: 0 0 15px rgba(255, 0, 255, 0.8),
                0 0 30px rgba(255, 0, 255, 0.6);
-  transition: color 0.3s ease, text-shadow 0.3s ease;
 }

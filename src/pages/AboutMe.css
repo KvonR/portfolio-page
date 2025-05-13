@@ -2,16 +2,17 @@
   padding: 60px 20px;
   background-color: #0A0A1E;
   color: #E0E0E0;
-  font-family: 'Segoe UI', 'Roboto', sans-serif;
   line-height: 1.8;
   text-align: center;
 }
 
-#about-me h2 {
-  font-size: 2.5em;
+#about-me h2.section-header {
+  font-size: 3em; /* UPDATED */
+  font-family: 'Orbitron', sans-serif; /* ADDED */
   margin-bottom: 20px;
   color: #FFFFFF;
-  text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
+  text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 5px #fff; /* UPDATED */
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 #about-me p {
@@ -20,9 +21,84 @@
   font-size: 1.2em;
 }
 
-.section-header:hover {
+.about-me-content-wrapper {
+  display: flex;
+  align-items: flex-start; /* Align items to the top */
+  gap: 40px; /* Space between text and visual */
+  max-width: 1200px; /* Max width for the content area */
+  margin: 40px auto 0 auto; /* Center the wrapper and add top margin */
+}
+
+.about-me-text {
+  flex: 2; /* Text takes up more space */
+  text-align: left;
+}
+
+.about-me-text p {
+  margin-bottom: 20px; /* Spacing between paragraphs */
+  font-size: 1.1em; /* Adjust as needed */
+  line-height: 1.7;
+  color: #E0E0E0; /* Slightly brighter text */
+  font-family: 'Share Tech Mono', monospace; /* Futuristic monospaced font */
+  letter-spacing: 0.5px; /* Slightly increased letter spacing */
+  text-shadow: 0 0 2px rgba(0, 240, 255, 0.3); /* Subtle neon blue glow */
+}
+
+.about-me-visual {
+  flex: 1; /* Visual takes up less space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px; /* Minimum height for the visual area */
+}
+
+/* ADDED: Styles for the new about-me-image */
+.about-me-image {
+  width: 100%;
+  max-width: 350px; /* Adjust as needed */
+  height: auto; /* Maintain aspect ratio */
+  border: 3px solid #00f0ff; /* Neon blue border */
+  border-radius: 8px; /* Slightly rounded corners */
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.5),
+              0 0 35px rgba(0, 240, 255, 0.3),
+              inset 0 0 15px rgba(0, 240, 255, 0.2);
+  object-fit: cover; /* Ensures the image covers the area, might crop */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.about-me-image:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: 0 0 25px rgba(255, 0, 255, 0.6), /* Pink glow on hover */
+              0 0 40px rgba(255, 0, 255, 0.4),
+              inset 0 0 20px rgba(255, 0, 255, 0.3);
+  border-color: #ff00ff; /* Pink border on hover */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .about-me-content-wrapper {
+    flex-direction: column; /* Stack text and visual on smaller screens */
+    align-items: center; /* Center items when stacked */
+  }
+
+  .about-me-text {
+    text-align: center; /* Center text when stacked */
+  }
+
+  .about-me-visual {
+    min-height: auto; /* Adjust min-height */
+    margin-top: 30px; /* Add space above visual when stacked */
+  }
+
+  .about-me-image {
+    width: 90%; /* Adjust width for smaller screens */
+    height: auto; /* Maintain aspect ratio */
+  }
+}
+
+/* MODIFIED: Made selector more specific and removed transition from hover state */
+#about-me h2.section-header:hover {
   color: #ff00ff; /* Hot pink/purple color */
   text-shadow: 0 0 15px rgba(255, 0, 255, 0.8),
                0 0 30px rgba(255, 0, 255, 0.6);
-  transition: color 0.3s ease, text-shadow 0.3s ease;
 }

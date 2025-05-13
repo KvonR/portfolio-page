@@ -7,13 +7,14 @@
   text-align: left; /* Align text to the left for readability */
 }
 
-#experience h2 {
+#experience h2.section-header { /* MODIFIED: Added .section-header and transition */
   font-size: 3em; /* Slightly larger than other section titles */
   margin-bottom: 40px; /* Increased margin */
   color: #FFFFFF;
   text-align: center; /* Center the main title */
   text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 5px #fff;
   font-family: 'Orbitron', sans-serif;
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* ADDED transition */
 }
 
 .experience-list {
@@ -79,9 +80,9 @@
 }
 
 /* Add hover effect for section headers */
-.section-header:hover {
+#experience h2.section-header:hover { /* MODIFIED: Made selector more specific */
   color: #ff00ff; /* Hot pink/purple color */
   text-shadow: 0 0 15px rgba(255, 0, 255, 0.8),
                0 0 30px rgba(255, 0, 255, 0.6);
-  transition: color 0.3s ease, text-shadow 0.3s ease;
+  /* transition: color 0.3s ease, text-shadow 0.3s ease; */ /* Can be kept or removed as it's on base */
 }

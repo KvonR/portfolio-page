@@ -6,11 +6,12 @@
   font-family: 'Orbitron', sans-serif;
 }
 
-#skills h2 {
+#skills h2.section-header { /* MODIFIED: Made selector more specific and added transition */
   font-size: 3em;
   margin-bottom: 50px;
   color: #FFFFFF;
   text-shadow: 0 0 8px #00f0ff, 0 0 12px #00f0ff, 0 0 2px #fff;
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* ADDED transition */
 }
 
 .skills-list {
@@ -43,9 +44,8 @@
   box-shadow: 0 0 12px rgba(255, 0, 255, 0.5), inset 0 0 8px rgba(255, 0, 255, 0.3);
 }
 
-.section-header:hover {
+#skills h2.section-header:hover { /* MODIFIED: Made selector more specific and removed transition from hover state */
   color: #ff00ff; /* Hot pink/purple color */
   text-shadow: 0 0 15px rgba(255, 0, 255, 0.8),
                0 0 30px rgba(255, 0, 255, 0.6);
-  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
