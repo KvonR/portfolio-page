@@ -87,7 +87,7 @@ const Home = () => {
       <canvas ref={canvasRef} className="neon-canvas"></canvas>
       <div className="home-content">
         <h1>Creative Web Solutions</h1>
-        <p>Hi, I'm Kev R, a Web & Software Developer.</p>
+        <p>I'm Kev, a Web/Software Developer.</p>
       </div>
       <a href="#projects" className="btn">View My Work</a>
     </section>
