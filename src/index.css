@@ -11,3 +11,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@keyframes glitch-effect {
+  0%, 15%, 100% {
+    transform: translate(0);
+    /* text-shadow is now inherited from the element's style or hover style */
+  }
+  5% {
+    transform: translate(-3px, 3px);
+    /* Only the glitch-specific shadows. These will temporarily override the inherited ones. */
+    text-shadow: 2px 2px 3px rgba(255, 0, 0, 0.7), /* Red flicker */
+                 -2px -2px 3px rgba(0, 255, 255, 0.7); /* Cyan flicker */
+  }
+  10% {
+    transform: translate(3px, -3px);
+    /* Only the glitch-specific shadows. These will temporarily override the inherited ones. */
+    text-shadow: 2px -2px 3px rgba(255, 0, 255, 0.7), /* Pink flicker */
+                 -2px 2px 3px rgba(0, 255, 0, 0.7);   /* Green flicker */
+  }
+}
+
+.glitch-text {
+  animation: glitch-effect 1.5s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Slightly faster animation */
+}

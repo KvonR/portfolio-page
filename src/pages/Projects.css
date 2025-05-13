@@ -90,4 +90,5 @@
   color: #ff00ff; /* Hot pink/purple color */
   text-shadow: 0 0 15px rgba(255, 0, 255, 0.8),
                0 0 30px rgba(255, 0, 255, 0.6);
+  animation: glitch-effect 1.5s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94); /* ADDED glitch animation on hover */
 }
