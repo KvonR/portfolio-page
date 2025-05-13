@@ -1,5 +1,6 @@
 import React from 'react';
 import './Experience.css';
+import { Parallax } from 'react-scroll-parallax';
 
 const Experience = () => {
   const experiences = [
@@ -26,22 +27,26 @@ const Experience = () => {
 
   return (
     <section id="experience">
-      <h2 className="section-header">My Experience</h2>
-      <div className="experience-list">
-        {experiences.map(exp => (
-          <div key={exp.id} className="experience-item">
-            <h3>{exp.title}</h3>
-            <h4>{exp.company} | {exp.date}</h4>
-            <p className="experience-location">{exp.location}</p>
-            <p>{exp.description}</p>
-            {exp.skills && exp.skills.length > 0 && (
-              <div className="experience-skills">
-                <strong>Skills:</strong> {exp.skills.join(', ')}
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
+      <Parallax speed={-5}>
+        <h2 className="section-header">My Experience</h2>
+      </Parallax>
+      <Parallax speed={10} className="experience-list-parallax-wrapper">
+        <div className="experience-list">
+          {experiences.map(exp => (
+            <div key={exp.id} className="experience-item">
+              <h3>{exp.title}</h3>
+              <h4>{exp.company} | {exp.date}</h4>
+              <p className="experience-location">{exp.location}</p>
+              <p>{exp.description}</p>
+              {exp.skills && exp.skills.length > 0 && (
+                <div className="experience-skills">
+                  <strong>Skills:</strong> {exp.skills.join(', ')}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </Parallax>
     </section>
   );
 };

@@ -2,6 +2,7 @@ import React from 'react';
 import './Projects.css';
 import retrosonicImage from '../assets/retrosonic.png';
 import roboticsImage from '../assets/Robotics.png';
+import { Parallax } from 'react-scroll-parallax';
 
 const Projects = () => {
   const projectList = [
@@ -21,17 +22,21 @@ const Projects = () => {
 
   return (
     <section id="projects">
-      <h2 className="section-header">Projects</h2>
-      <div className="project-list">
-        {projectList.map((project, index) => (
-          <div key={index} className="project-item">
-            <img src={project.imageUrl} alt={project.title} className="project-image" />
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
-            <a href={project.link} target="_blank" rel="noopener noreferrer" className="btn-view-project">View Project</a>
-          </div>
-        ))}
-      </div>
+      <Parallax speed={-5}>
+        <h2 className="section-header">Projects</h2>
+      </Parallax>
+      <Parallax speed={10} className="project-list-parallax-wrapper">
+        <div className="project-list">
+          {projectList.map((project, index) => (
+            <div key={index} className="project-item">
+              <img src={project.imageUrl} alt={project.title} className="project-image" />
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+              <a href={project.link} target="_blank" rel="noopener noreferrer" className="btn-view-project">View Project</a>
+            </div>
+          ))}
+        </div>
+      </Parallax>
     </section>
   );
 };

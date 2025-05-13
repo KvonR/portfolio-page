@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import './Home.css';
+import { Parallax } from 'react-scroll-parallax';
 
 const Home = () => {
   const canvasRef = useRef(null);
@@ -86,10 +87,16 @@ const Home = () => {
     <section id="home">
       <canvas ref={canvasRef} className="neon-canvas"></canvas>
       <div className="home-content">
-        <h1>Creative Web Solutions</h1>
-        <p>I'm Kev, a Web/Software Developer.</p>
+        <Parallax speed={-10}>
+          <h1>Creative Web Solutions</h1>
+        </Parallax>
+        <Parallax speed={5}>
+          <p>I'm Kev, a Web/Software Developer.</p>
+        </Parallax>
       </div>
-      <a href="#projects" className="btn">View My Work</a>
+      <Parallax speed={15} className="home-button-parallax-wrapper">
+        <a href="#projects" className="btn">View My Work</a>
+      </Parallax>
     </section>
   );
 };
