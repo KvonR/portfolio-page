@@ -1,0 +1,79 @@
+/* /Users/kvn/Projects/portfolio-page/src/pages/Experience.css */
+#experience {
+  padding: 60px 20px;
+  background-color: transparent; /* Inherits from App.css */
+  color: #E0E0E0;
+  font-family: 'Share Tech Mono', monospace;
+  text-align: left; /* Align text to the left for readability */
+}
+
+#experience h2 {
+  font-size: 3em; /* Slightly larger than other section titles */
+  margin-bottom: 40px; /* Increased margin */
+  color: #FFFFFF;
+  text-align: center; /* Center the main title */
+  text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 5px #fff;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.experience-list {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column layout */
+  gap: 40px; /* Increased gap */
+  max-width: 900px; /* Slightly wider for more content */
+  margin: 0 auto;
+}
+
+.experience-item {
+  background-color: rgba(10, 10, 30, 0.85); /* Darker, more opaque background */
+  border: 1px solid #00f0ff;
+  border-radius: 8px; /* Slightly larger radius */
+  padding: 30px; /* Increased padding */
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.3), 0 0 30px rgba(0, 240, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Added border-color to transition */
+  backdrop-filter: blur(8px); /* Stronger blur */
+}
+
+.experience-item:hover {
+  transform: translateY(-10px); /* More pronounced hover effect */
+  box-shadow: 0 0 25px rgba(255, 0, 255, 0.4), inset 0 0 15px rgba(255, 0, 255, 0.2); /* Pink glow like projects */
+  border-color: rgba(255, 0, 255, 0.5); /* Pink border like projects */
+}
+
+.experience-item h3 {
+  font-size: 2em; /* Larger title */
+  color: #00f0ff;
+  margin-bottom: 10px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.experience-item h4 {
+  font-size: 1.2em; /* Slightly larger company/date */
+  color: #cccccc; /* Lighter grey */
+  margin-bottom: 5px; /* Reduced margin to bring location closer */
+  font-style: italic;
+}
+
+.experience-location {
+  font-size: 1em;
+  color: #bbbbbb; /* Slightly dimmer than company/date */
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.experience-item p {
+  font-size: 1.1em; /* Slightly larger description text */
+  line-height: 1.7;
+  margin-bottom: 20px; /* Increased margin */
+  color: #E0E0E0;
+}
+
+.experience-skills {
+  font-size: 1em;
+  color: #00f0ff; /* Neon blue for skills */
+  margin-top: 15px;
+}
+
+.experience-skills strong {
+  color: #FFFFFF; /* White for "Skills:" label */
+}

@@ -1,0 +1,89 @@
+/* src/pages/Home.css */
+#home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+  background-color: transparent; /* Show main App.css background */
+  min-height: 90vh;
+  border-bottom: none;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.home-content h1 {
+  font-size: 4em;
+  margin-bottom: 25px;
+  color: #FFFFFF;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px #00f0ff, 
+               0 0 20px #00f0ff, 
+               0 0 5px #fff, 
+               0 0 30px rgba(0, 240, 255, 0.5); /* More layered glow */
+}
+
+.home-content p {
+  font-size: 1.4em;
+  margin-bottom: 35px;
+  color: #E0E0E0;
+  max-width: 700px;
+  line-height: 1.8;
+  font-family: 'Segoe UI', 'Roboto', sans-serif; /* Softer font for paragraph */
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  color: #0A0A1E; /* Dark text on bright button */
+  background: linear-gradient(45deg, #00f0ff, #00c0ff); /* Gradient neon blue */
+  border: none; /* Remove border, rely on shadow/gradient */
+  border-radius: 5px; /* Can be sharper e.g. 2px or 0 for more angular */
+  text-decoration: none;
+  font-weight: 700; /* Orbitron bold */
+  letter-spacing: 1px;
+  transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.7), 
+              0 0 20px rgba(0, 240, 255, 0.5);
+  transform: perspective(1px) translateZ(0); /* Smooth animation */
+}
+
+.btn:hover {
+  background: linear-gradient(45deg, #ff00ff, #d000ff); /* Gradient hot pink */
+  color: #FFFFFF; /* White text on pink */
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.8), 
+              0 0 30px rgba(255, 0, 255, 0.6);
+  transform: scale(1.05);
+}
+
+/* Typewriter animation styles */
+.typewriter-animated {
+  display: inline-block;
+  border-right: 2px solid #00f0ff;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: blink-caret 0.7s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #00f0ff;
+  }
+}
+
+/* Animation for the rest of the home content (fade-in and slide-up) */
+.home-content {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.home-content.home-content-animated {
+  opacity: 1;
+  transform: translateY(0);
+}

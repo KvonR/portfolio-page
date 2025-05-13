@@ -1,0 +1,44 @@
+/* src/components/Skills.css */
+#skills {
+  padding: 50px 20px;
+  background-color: transparent; /* Show App.css section styling */
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+}
+
+#skills h2 {
+  font-size: 3em;
+  margin-bottom: 50px;
+  color: #FFFFFF;
+  text-shadow: 0 0 8px #00f0ff, 0 0 12px #00f0ff, 0 0 2px #fff;
+}
+
+.skills-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.skills-list li {
+  background-color: rgba(0, 240, 255, 0.1); /* Translucent Neon Blue background */
+  color: #00f0ff; /* Neon Blue text */
+  padding: 15px 30px;
+  border-radius: 30px; /* Pill shape */
+  font-size: 1.3em;
+  font-weight: 400; /* Orbitron regular */
+  border: 1px solid rgba(0, 240, 255, 0.4); /* Neon Blue border */
+  box-shadow: 0 0 8px rgba(0, 240, 255, 0.3), inset 0 0 5px rgba(0, 240, 255, 0.2);
+  transition: transform 0.2s ease, background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  cursor: default; /* Indicate they are not clickable links unless they are */
+}
+
+.skills-list li:hover {
+  transform: scale(1.1) perspective(1px) translateZ(0);
+  background-color: rgba(255, 0, 255, 0.2); /* Translucent Hot Pink background on hover */
+  color: #ff00ff; /* Hot Pink text */
+  border-color: rgba(255, 0, 255, 0.6);
+  box-shadow: 0 0 12px rgba(255, 0, 255, 0.5), inset 0 0 8px rgba(255, 0, 255, 0.3);
+}
