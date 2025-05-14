@@ -98,6 +98,14 @@
   animation: glitch-effect 1.5s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94); /* ADDED glitch animation on hover */
 }
 
+/* Stop the glitch effect on hover */
+.home-content h1:hover::before,
+.home-content h1:hover::after {
+  animation: none; /* Disable animations on hover */
+  clip: auto; /* Reset clipping */
+  text-shadow: none; /* Remove glitch shadow */
+}
+
 /* Ensure the paragraph is centered and aligned properly */
 .home-content p {
   font-size: 1.4em;
