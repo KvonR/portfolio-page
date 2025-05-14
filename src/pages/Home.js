@@ -35,7 +35,7 @@ const Home = () => {
     canvas.height = window.innerHeight;
 
     const particles = [];
-    const colors = ['#00ffcc', '#ff00ff', '#00ccff'];
+    const colors = [ '#ff00ff', '#00ccff'];
 
     class Particle {
       constructor(x, y, radius, color) {
