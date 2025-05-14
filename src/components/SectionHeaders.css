@@ -1,0 +1,143 @@
+/* Common glitch effect for all section headers */
+.section-header.glitch {
+  position: relative;
+  color: white;
+  font-size: 3em;
+  letter-spacing: 0.2em;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+}
+
+.section-header.glitch::before,
+.section-header.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.section-header.glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 #ff00c1;
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+.section-header.glitch::after {
+  left: -2px;
+  text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+  animation: glitch-anim2 1s infinite linear alternate-reverse;
+}
+
+/* Add hover effect for the section headers */
+.section-header.glitch:hover {
+  color: #ff00ff; /* Hot pink/purple color */
+  text-shadow: 0 0 15px rgba(255, 0, 255, 0.8),
+               0 0 30px rgba(255, 0, 255, 0.6);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  animation: glitch-effect 1.5s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Stop the glitch effect on hover */
+.section-header.glitch:hover::before,
+.section-header.glitch:hover::after {
+  animation: none;
+  clip: auto;
+  text-shadow: none;
+}
+
+/* Enhanced glitch hover class */
+.section-header.glitch.glitch-hover {
+  color: #ff00ff;
+  text-shadow: 0 0 15px rgba(255, 0, 255, 0.8),
+               0 0 30px rgba(255, 0, 255, 0.6);
+  animation: glitch-effect 1.5s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94),
+             glow-pulse-purple 2s infinite alternate;
+}
+
+.section-header.glitch.glitch-hover::before,
+.section-header.glitch.glitch-hover::after {
+  animation: none;
+  clip: auto;
+}
+
+.section-header.glitch.glitch-hover::before {
+  left: 2px;
+  text-shadow: -2px 0 #ff00c1;
+  opacity: 0.8;
+  animation: glitch-hover-anim 3s infinite linear alternate-reverse;
+}
+
+.section-header.glitch.glitch-hover::after {
+  left: -2px;
+  text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+  opacity: 0.8;
+  animation: glitch-hover-anim2 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% {
+    clip: rect(20px, 9999px, 85px, 0);
+  }
+  20% {
+    clip: rect(44px, 9999px, 56px, 0);
+  }
+  40% {
+    clip: rect(10px, 9999px, 80px, 0);
+  }
+  60% {
+    clip: rect(30px, 9999px, 50px, 0);
+  }
+  80% {
+    clip: rect(25px, 9999px, 75px, 0);
+  }
+  100% {
+    clip: rect(15px, 9999px, 65px, 0);
+  }
+}
+
+@keyframes glitch-anim2 {
+  0% {
+    clip: rect(10px, 9999px, 70px, 0);
+  }
+  20% {
+    clip: rect(30px, 9999px, 60px, 0);
+  }
+  40% {
+    clip: rect(15px, 9999px, 55px, 0);
+  }
+  60% {
+    clip: rect(25px, 9999px, 65px, 0);
+  }
+  80% {
+    clip: rect(20px, 9999px, 75px, 0);
+  }
+  100% {
+    clip: rect(35px, 9999px, 50px, 0);
+  }
+}
+
+@keyframes glitch-hover-anim {
+  0% { clip: rect(2px, 9999px, 15px, 0); }
+  20% { clip: rect(5px, 9999px, 12px, 0); }
+  40% { clip: rect(1px, 9999px, 10px, 0); }
+  60% { clip: rect(3px, 9999px, 7px, 0); }
+  80% { clip: rect(2px, 9999px, 10px, 0); }
+  100% { clip: rect(1px, 9999px, 5px, 0); }
+}
+
+@keyframes glitch-hover-anim2 {
+  0% { clip: rect(1px, 9999px, 10px, 0); }
+  20% { clip: rect(3px, 9999px, 8px, 0); }
+  40% { clip: rect(1px, 9999px, 5px, 0); }
+  60% { clip: rect(2px, 9999px, 7px, 0); }
+  80% { clip: rect(2px, 9999px, 3px, 0); }
+  100% { clip: rect(3px, 9999px, 5px, 0); }
+}
+
+@keyframes glow-pulse-purple {
+  0% { text-shadow: 0 0 10px rgba(255, 0, 255, 0.7), 0 0 20px rgba(255, 0, 255, 0.5); }
+  100% { text-shadow: 0 0 15px rgba(255, 0, 255, 0.9), 0 0 30px rgba(255, 0, 255, 0.7), 0 0 45px rgba(255, 0, 255, 0.5); }
+}

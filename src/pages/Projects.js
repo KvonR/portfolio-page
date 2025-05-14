@@ -23,7 +23,7 @@ const Projects = () => {
   return (
     <section id="projects">
       <Parallax speed={-5}>
-        <h2 className="section-header">Projects</h2>
+        <h2 className="section-header glitch" data-text="Projects">Projects</h2>
       </Parallax>
       <Parallax speed={10} className="project-list-parallax-wrapper">
         <div className="project-list">

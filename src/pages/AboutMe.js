@@ -7,7 +7,7 @@ const AboutMe = () => {
   return (
     <section id="about-me">
       <Parallax speed={-5}>
-        <h2 className="section-header">About Me</h2>
+        <h2 className="section-header glitch" data-text="About Me">About Me</h2>
       </Parallax>
       <div className="about-me-content-wrapper">
         <Parallax speed={5} className="about-me-text-parallax-wrapper">

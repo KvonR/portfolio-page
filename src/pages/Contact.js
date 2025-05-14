@@ -19,7 +19,7 @@ const Contact = () => {
   return (
     <section id="contact">
       <Parallax speed={-5}> {/* ADDED Parallax for header */}
-        <h2 className="section-header">Contact</h2>
+        <h2 className="section-header glitch" data-text="Contact">Contact</h2>
       </Parallax>
       <Parallax speed={10} className="contact-content-parallax-wrapper"> {/* ADDED Parallax for content */}
         <form onSubmit={handleSubmit}>

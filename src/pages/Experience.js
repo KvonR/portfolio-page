@@ -28,7 +28,7 @@ const Experience = () => {
   return (
     <section id="experience">
       <Parallax speed={-5}>
-        <h2 className="section-header">My Experience</h2>
+        <h2 className="section-header glitch" data-text="My Experience">My Experience</h2>
       </Parallax>
       <Parallax speed={10} className="experience-list-parallax-wrapper">
         <div className="experience-list">
