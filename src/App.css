@@ -18,6 +18,11 @@ body {
   color: #E0E0E0; /* Brighter, cleaner light gray/white for text */
 }
 
+/* Ensure consistent font styling across all components */
+h1, h2, h3, h4, h5, h6, p, a, span, div, button, input, textarea, select, li {
+  font-family: 'Orbitron', sans-serif;
+}
+
 code {
   font-family: 'Share Tech Mono', source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace; /* More futuristic mono font */
@@ -90,6 +95,20 @@ h1, h2, h3, h4, h5, h6 {
   text-shadow: 0 0 8px #00f0ff, 
                0 0 12px #00f0ff, 
                0 0 2px #fff; /* More intense and layered neon glow */
+}
+
+/* Add futuristic glow to all section headers */
+h2.section-header {
+  color: #FFFFFF;
+  text-shadow: 0 0 8px #00f0ff, 0 0 12px #00f0ff, 0 0 2px #fff;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+h2.section-header:hover {
+  color: #ff00ff; /* Hot pink/purple color on hover */
+  text-shadow: 0 0 15px rgba(255, 0, 255, 0.8),
+               0 0 30px rgba(255, 0, 255, 0.6);
+  animation: glitch-effect 1.5s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 a {

@@ -12,6 +12,15 @@
   color: #FFFFFF;
   text-shadow: 0 0 8px #00f0ff, 0 0 12px #00f0ff, 0 0 2px #fff;
   transition: color 0.3s ease, text-shadow 0.3s ease; /* ADDED transition */
+  letter-spacing: 0.1em; /* Enhanced letter spacing for futuristic look */
+}
+
+/* Add hover effect for section header */
+#projects h2.section-header:hover {
+  color: #ff00ff; /* Hot pink/purple color */
+  text-shadow: 0 0 15px rgba(255, 0, 255, 0.8),
+               0 0 30px rgba(255, 0, 255, 0.6);
+  animation: glitch-effect 1.5s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .project-list {
@@ -52,6 +61,10 @@
   margin-bottom: 15px;
   color: #00f0ff; /* Neon Blue */
   font-weight: 700;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 0.05em;
+  color: #FFFFFF;
+  text-shadow: 0 0 5px rgba(0, 240, 255, 0.5); /* Subtle glow for project titles */
 }
 
 .project-item p {
@@ -60,7 +73,9 @@
   color: #D0D0D0; /* Slightly softer gray for paragraph */
   line-height: 1.6;
   min-height: 50px;
-  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.03em;
 }
 
 .btn-view-project {
@@ -83,12 +98,4 @@
   color: #FFFFFF;
   box-shadow: 0 0 12px rgba(255, 0, 255, 0.7);
   transform: scale(1.05);
-}
-
-/* MODIFIED: Made selector more specific and removed the old generic .section-header:hover */
-#projects h2.section-header:hover {
-  color: #ff00ff; /* Hot pink/purple color */
-  text-shadow: 0 0 15px rgba(255, 0, 255, 0.8),
-               0 0 30px rgba(255, 0, 255, 0.6);
-  animation: glitch-effect 1.5s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94); /* ADDED glitch animation on hover */
 }
