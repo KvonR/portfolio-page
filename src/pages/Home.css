@@ -22,6 +22,7 @@
   font-size: 3em;
   letter-spacing: 0.2em;
   font-family: 'Orbitron', sans-serif;
+  font-weight: 600; /* Slightly increased font weight for a tiny bit thicker appearance */
 }
 
 .home-content h1::before,
