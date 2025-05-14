@@ -30,12 +30,14 @@ nav ul li a {
   font-size: 1.1em;
   letter-spacing: 1px;
   transition: color 0.3s ease, text-shadow 0.3s ease;
+  display: inline-block; /* Ensure transforms apply correctly */
 }
 
 nav ul li a:hover,
 nav ul li a.active /* Assuming an active class for current page */ {
   color: #ff00ff; /* Hot Pink */
   text-shadow: 0 0 8px #ff00ff, 0 0 12px #ff00ff, 0 0 2px #fff;
+  animation: glitch-effect 0.65s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94); /* ADDED glitch animation on hover */
 }
 
 /* Add hover effect for all headings */
