@@ -50,16 +50,24 @@
 
 .experience-item h4 {
   font-size: 1.2em; /* Slightly larger company/date */
-  color: #cccccc; /* Lighter grey */
+  color: #e0e0e0; /* Brighter text to show glow better */
   margin-bottom: 5px; /* Reduced margin to bring location closer */
-  font-style: italic;
+  font-style: bold;
+  text-shadow: 0 0 10px #00f0ff, 0 0 10px #00f0ff; /* Stronger blue glow with double layer */
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.experience-item h4:hover {
+  color: #ffffff; /* Brighter white on hover */
+  text-shadow: 0 0 10px #ff00ff, 0 0 15px #ff00ff; /* Switch to purple glow on hover */
+  cursor: default; /* Shows it's interactive but not a link */
 }
 
 .experience-location {
   font-size: 1em;
   color: #bbbbbb; /* Slightly dimmer than company/date */
   margin-bottom: 15px;
-  font-style: italic;
+  font-style: italic, bold;
 }
 
 .experience-item p {
@@ -73,6 +81,13 @@
   font-size: 1em;
   color: #00f0ff; /* Neon blue for skills */
   margin-top: 15px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.experience-skills:hover {
+  color: #ff00ff; /* Purple on hover */
+  text-shadow: 0 0 8px #ff00ff, 0 0 15px #ff00ff; /* Purple glow on hover */
+  cursor: default;
 }
 
 .experience-skills strong {
