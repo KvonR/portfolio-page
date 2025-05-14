@@ -33,19 +33,15 @@
 
 /* Add hover effect for the section headers */
 .section-header.glitch:hover {
-  color: #ff00ff; /* Hot pink/purple color */
-  text-shadow: 0 0 15px rgba(255, 0, 255, 0.8),
-               0 0 30px rgba(255, 0, 255, 0.6);
   transition: color 0.3s ease, text-shadow 0.3s ease;
   animation: glitch-effect 1.5s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Stop the glitch effect on hover */
+/* Stop the default glitch effect on hover to allow our split effect to take over */
 .section-header.glitch:hover::before,
 .section-header.glitch:hover::after {
   animation: none;
-  clip: auto;
-  text-shadow: none;
+  opacity: 0;
 }
 
 /* Enhanced glitch hover class */
@@ -75,6 +71,78 @@
   text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
   opacity: 0.8;
   animation: glitch-hover-anim2 2s infinite linear alternate-reverse;
+}
+
+/* Split color effect styles */
+.section-header.glitch .blue-half {
+  color: #00f0ff; /* Neon blue */
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.8),
+               0 0 20px rgba(0, 240, 255, 0.6);
+  display: inline-block;
+  position: relative;
+  animation: blue-pulse 1.5s infinite alternate;
+  font-family: 'Orbitron', sans-serif; /* Ensure font consistency */
+}
+
+.section-header.glitch .purple-half {
+  color: #ff00ff; /* Neon purple */
+  text-shadow: 0 0 10px rgba(255, 0, 255, 0.8),
+               0 0 20px rgba(255, 0, 255, 0.6);
+  display: inline-block;
+  position: relative;
+  animation: purple-pulse 1.5s infinite alternate;
+  font-family: 'Orbitron', sans-serif; /* Ensure font consistency */
+}
+
+/* Pulse animations for each half */
+@keyframes blue-pulse {
+  0% { text-shadow: 0 0 10px rgba(0, 240, 255, 0.7), 0 0 20px rgba(0, 240, 255, 0.5); }
+  100% { text-shadow: 0 0 15px rgba(0, 240, 255, 0.9), 0 0 30px rgba(0, 240, 255, 0.7), 0 0 45px rgba(0, 240, 255, 0.5); }
+}
+
+@keyframes purple-pulse {
+  0% { text-shadow: 0 0 10px rgba(255, 0, 255, 0.7), 0 0 20px rgba(255, 0, 255, 0.5); }
+  100% { text-shadow: 0 0 15px rgba(255, 0, 255, 0.9), 0 0 30px rgba(255, 0, 255, 0.7), 0 0 45px rgba(255, 0, 255, 0.5); }
+}
+
+/* Glitch effects for split colors */
+.section-header.glitch.glitch-hover .blue-half::before,
+.section-header.glitch.glitch-hover .purple-half::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 2px;
+  text-shadow: -1px 0 #00f0ff;
+  opacity: 0.8;
+  animation: glitch-hover-blue 3s infinite linear alternate-reverse;
+}
+
+.section-header.glitch.glitch-hover .blue-half::after,
+.section-header.glitch.glitch-hover .purple-half::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: -2px;
+  text-shadow: -1px 0 #ff00ff;
+  opacity: 0.8;
+  animation: glitch-hover-purple 2s infinite linear alternate-reverse;
+}
+
+/* Separate glitch animations for blue and purple */
+@keyframes glitch-hover-blue {
+  0% { clip: rect(2px, 9999px, 15px, 0); }
+  25% { clip: rect(5px, 9999px, 12px, 0); }
+  50% { clip: rect(1px, 9999px, 10px, 0); }
+  75% { clip: rect(3px, 9999px, 7px, 0); }
+  100% { clip: rect(1px, 9999px, 5px, 0); }
+}
+
+@keyframes glitch-hover-purple {
+  0% { clip: rect(3px, 9999px, 10px, 0); }
+  25% { clip: rect(1px, 9999px, 8px, 0); }
+  50% { clip: rect(4px, 9999px, 6px, 0); }
+  75% { clip: rect(2px, 9999px, 9px, 0); }
+  100% { clip: rect(5px, 9999px, 7px, 0); }
 }
 
 @keyframes glitch-anim {
@@ -140,4 +208,61 @@
 @keyframes glow-pulse-purple {
   0% { text-shadow: 0 0 10px rgba(255, 0, 255, 0.7), 0 0 20px rgba(255, 0, 255, 0.5); }
   100% { text-shadow: 0 0 15px rgba(255, 0, 255, 0.9), 0 0 30px rgba(255, 0, 255, 0.7), 0 0 45px rgba(255, 0, 255, 0.5); }
+}
+
+/* Additional glitch effects for the split colors */
+.section-header.glitch .blue-half,
+.section-header.glitch .purple-half {
+  position: relative;
+  z-index: 1;
+}
+
+/* More subtle glitch effect for the blue section */
+.section-header.glitch .blue-half::before {
+  content: attr(textContent);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  filter: blur(1px);
+  animation: blue-glow-flicker 3s infinite;
+}
+
+/* More subtle glitch effect for the purple section */
+.section-header.glitch .purple-half::before {
+  content: attr(textContent);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  filter: blur(1px);
+  animation: purple-glow-flicker 2.5s infinite;
+}
+
+@keyframes blue-glow-flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+  20%, 24%, 55% {
+    filter: blur(1px);
+    opacity: 0.8;
+    text-shadow: 0 0 15px #00f0ff;
+  }
+}
+
+@keyframes purple-glow-flicker {
+  0%, 29%, 31%, 63%, 65%, 67%, 100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+  30%, 64%, 66% {
+    filter: blur(1px);
+    opacity: 0.8;
+    text-shadow: 0 0 15px #ff00ff;
+  }
 }

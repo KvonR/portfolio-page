@@ -111,7 +111,29 @@ const Home = () => {
       <canvas ref={canvasRef} className="neon-canvas"></canvas>
       <div className="home-content">
         <Parallax speed={-10}>
-          <h1 className="glitch" data-text="Building the Web. One Line at a Time.">Building the Web. One Line at a Time.</h1>
+          <h1 
+            className="glitch" 
+            data-text="Building the Web. One Line at a Time."
+            onMouseEnter={(e) => {
+              // Split the text into the two sentences
+              
+              // Create the split effect with the first sentence blue and second sentence purple
+              e.target.innerHTML = `
+                <span class="blue-half">Building the Web.</span> 
+                <span class="purple-half">One Line at a Time.</span>
+              `;
+              
+              // Add glitch hover class
+              e.target.classList.add('glitch-hover');
+            }}
+            onMouseLeave={(e) => {
+              // Restore the original text
+              e.target.innerHTML = 'Building the Web. One Line at a Time.';
+              
+              // Remove glitch hover class
+              e.target.classList.remove('glitch-hover');
+            }}
+          >Building the Web. One Line at a Time.</h1>
         </Parallax>
         <Parallax speed={5}>
           <p 
