@@ -2,8 +2,31 @@ import React, { useEffect, useRef } from 'react';
 import './Home.css';
 import { Parallax } from 'react-scroll-parallax';
 
+// Force load Orbitron font with white text and initial blue glow
+const orbitronStyle = {
+  fontFamily: "'Orbitron', sans-serif",
+  color: '#FFFFFF',
+  textShadow: '0 0 10px #00ccff, 0 0 20px #00ccff, 0 0 30px #00ccff'
+};
+
 const Home = () => {
   const canvasRef = useRef(null);
+  const subtitleRef = useRef(null);
+
+  // Effect for initializing the subtitle glow animation
+  useEffect(() => {
+    if (subtitleRef.current) {
+      // Start the blue glow animation on component mount
+      subtitleRef.current.animate([
+        { textShadow: '0 0 10px #00ccff, 0 0 20px #00ccff, 0 0 30px #00ccff' },
+        { textShadow: '0 0 15px #00ccff, 0 0 25px #00ccff, 0 0 35px #00ccff' },
+        { textShadow: '0 0 10px #00ccff, 0 0 20px #00ccff, 0 0 30px #00ccff' }
+      ], {
+        duration: 2000,
+        iterations: Infinity
+      });
+    }
+  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -91,7 +114,41 @@ const Home = () => {
           <h1 className="glitch" data-text="Building the Web. One Line at a Time.">Building the Web. One Line at a Time.</h1>
         </Parallax>
         <Parallax speed={5}>
-          <p>Hi, I'm Kev — a Web & Software Developer.</p>
+          <p 
+            ref={subtitleRef}
+            className="subtitle-text" 
+            style={orbitronStyle}
+            onMouseEnter={(e) => {
+              // Apply purple glow on hover
+              e.currentTarget.style.textShadow = '0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff';
+              // Start a pulsating animation
+              e.currentTarget.animate([
+                { textShadow: '0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff' },
+                { textShadow: '0 0 15px #ff00ff, 0 0 25px #ff00ff, 0 0 35px #ff00ff' },
+                { textShadow: '0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff' }
+              ], {
+                duration: 2000,
+                iterations: Infinity
+              });
+            }}
+            onMouseLeave={(e) => {
+              // Restore blue glow when not hovering
+              e.currentTarget.style.textShadow = '0 0 10px #00ccff, 0 0 20px #00ccff, 0 0 30px #00ccff';
+              // Clear any running animations
+              e.currentTarget.getAnimations().forEach(anim => anim.cancel());
+              // Start blue glow pulsating
+              e.currentTarget.animate([
+                { textShadow: '0 0 10px #00ccff, 0 0 20px #00ccff, 0 0 30px #00ccff' },
+                { textShadow: '0 0 15px #00ccff, 0 0 25px #00ccff, 0 0 35px #00ccff' },
+                { textShadow: '0 0 10px #00ccff, 0 0 20px #00ccff, 0 0 30px #00ccff' }
+              ], {
+                duration: 2000,
+                iterations: Infinity
+              });
+            }}
+          >
+            Hi, I'm Kev — a Web & Software Developer.
+          </p>
         </Parallax>
       </div>
       <Parallax speed={15} className="home-button-parallax-wrapper">
