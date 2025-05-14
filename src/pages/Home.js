@@ -88,10 +88,10 @@ const Home = () => {
       <canvas ref={canvasRef} className="neon-canvas"></canvas>
       <div className="home-content">
         <Parallax speed={-10}>
-          <h1>Creative Web Solutions</h1>
+          <h1>Building the Web. One Line at a Time.</h1>
         </Parallax>
         <Parallax speed={5}>
-          <p>I'm Kev, a Web/Software Developer.</p>
+          <p>Hi, I'm Kev — a Web & Software Developer.</p>
         </Parallax>
       </div>
       <Parallax speed={15} className="home-button-parallax-wrapper">

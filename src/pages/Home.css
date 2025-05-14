@@ -18,10 +18,10 @@
   color: #FFFFFF;
   font-weight: 700;
   letter-spacing: 2px;
-  text-shadow: 0 0 10px #00f0ff, 
-               0 0 20px #00f0ff, 
-               0 0 5px #fff, 
-               0 0 30px rgba(0, 240, 255, 0.5); /* More layered glow */
+  text-shadow: 0 0 5px #00f0ff, 
+               0 0 10px #00f0ff, 
+               0 0 2px #fff, 
+               0 0 15px rgba(0, 240, 255, 0.3); /* Reduced blur */
 }
 
 /* Add hover effect for the Creative Web Solutions text */
