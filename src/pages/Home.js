@@ -119,21 +119,21 @@ const Home = () => {
               
               // Create the split effect with the first sentence blue and second sentence purple
               e.target.innerHTML = `
-                <span class="blue-half">Building the Web.</span> 
-                <span class="purple-half">One Line at a Time.</span>
+                <span class="blue-half">Building the Web<span class="period">.</span></span> 
+                <span class="purple-half">One Line at a Time<span class="period">.</span></span>
               `;
               
               // Add glitch hover class
               e.target.classList.add('glitch-hover');
             }}
             onMouseLeave={(e) => {
-              // Restore the original text
-              e.target.innerHTML = 'Building the Web. One Line at a Time.';
+              // Restore the original text with pulsating periods
+              e.target.innerHTML = 'Building the Web<span class="period">.</span> One Line at a Time<span class="period">.</span>';
               
               // Remove glitch hover class
               e.target.classList.remove('glitch-hover');
             }}
-          >Building the Web. One Line at a Time.</h1>
+          >Building the Web<span class="period">.</span> One Line at a Time<span class="period">.</span></h1>
         </Parallax>
         <Parallax speed={5}>
           <p 

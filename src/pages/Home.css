@@ -259,3 +259,72 @@
   opacity: 0.8;
   animation: glitch-hover-purple 2s infinite linear alternate-reverse;
 }
+
+/* Pulsating periods animation for the title - Only on hover */
+.home-content h1 .period {
+  display: inline-block;
+  transform-origin: center;
+}
+
+/* Regular styling for periods when not hovering */
+.home-content h1:hover .period {
+  animation: period-pulse 2s infinite alternate ease-in-out;
+}
+
+.home-content h1 .blue-half .period {
+  color: #00f0ff;
+  text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
+}
+
+.home-content h1 .purple-half .period {
+  color: #ff00ff;
+  text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+}
+
+/* Apply animations only on hover */
+.home-content h1:hover .blue-half .period {
+  animation: blue-period-pulse 2s infinite alternate ease-in-out;
+}
+
+.home-content h1:hover .purple-half .period {
+  animation: purple-period-pulse 2s infinite alternate ease-in-out;
+}
+
+@keyframes blue-period-pulse {
+  0% {
+    opacity: 0.7;
+    transform: scale(1);
+    text-shadow: 0 0 5px #00f0ff, 0 0 10px #00f0ff;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.4);
+    text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 30px #00f0ff;
+  }
+}
+
+@keyframes purple-period-pulse {
+  0% {
+    opacity: 0.7;
+    transform: scale(1);
+    text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.4);
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+  }
+}
+
+@keyframes period-pulse {
+  0% {
+    opacity: 0.7;
+    transform: scale(1);
+    text-shadow: 0 0 5px white, 0 0 10px white;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.4);
+    text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
+  }
+}
