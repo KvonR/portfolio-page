@@ -3,7 +3,7 @@ header {
   padding: 25px 20px;
   color: #E0E0E0;
   text-align: center;
-  border-bottom: 2px solid rgba(0, 240, 255, 0.5); /* Translucent Neon Blue border */
+  border-bottom: 2px solid rgba(255, 0, 255, 0.6); /* Translucent Neon Purple border */
   backdrop-filter: blur(5px); /* Frosted glass effect */
   position: sticky;
   top: 0;
