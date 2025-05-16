@@ -17,7 +17,7 @@ const Skills = () => {
   return (
     <section id="skills">
       <Parallax speed={-5}> {/* ADDED Parallax for header */}
-        <h2 className="section-header glitch" data-text="Skills">Skills</h2>
+        <h2 className="section-header glitch" data-text="My Skills">My Skills</h2>
       </Parallax>
       <Parallax speed={10} className="skills-list-parallax-wrapper"> {/* ADDED Parallax for list */}
         <ul className="skills-list">
