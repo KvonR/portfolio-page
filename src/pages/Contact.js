@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './Contact.css'; 
 import { Parallax } from 'react-scroll-parallax'; // ADDED
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -55,9 +58,18 @@ const Contact = () => {
           <button type="submit">Send</button>
         </form>
         <div className="contact-links">
-          <p>Email: <a href="mailto:kevinrahimi75@gmail.com">kevinrahimi75@gmail.com</a></p>
-          <p>LinkedIn: <a href="https://www.linkedin.com/in/rkev/">linkedin.com/in/rkev</a></p>
-          <p>GitHub: <a href="https://github.com/kvonr">github.com/kvonr</a></p>
+          <p className="contact-item">
+            <FontAwesomeIcon icon={faEnvelope} className="contact-icon" />
+            <a href="mailto:kevinrahimi75@gmail.com">kevinrahimi75@gmail.com</a>
+          </p>
+          <p className="contact-item">
+            <FontAwesomeIcon icon={faLinkedin} className="contact-icon" />
+            <a href="https://www.linkedin.com/in/rkev/">linkedin.com/in/rkev</a>
+          </p>
+          <p className="contact-item">
+            <FontAwesomeIcon icon={faGithub} className="contact-icon" />
+            <a href="https://github.com/kvonr">github.com/kvonr</a>
+          </p>
         </div>
       </Parallax>
     </section>

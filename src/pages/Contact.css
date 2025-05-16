@@ -102,10 +102,47 @@
   font-family: 'Segoe UI', 'Roboto', sans-serif;
 }
 
+.contact-links {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+/* Icon styling */
+.contact-icon {
+  font-size: 1.6em;
+  color: #00f0ff;
+  margin-right: 15px;
+  filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.7));
+  transition: all 0.3s ease;
+  width: 25px; /* Fixed width for better alignment */
+  text-align: center;
+}
+
+.contact-item:hover .contact-icon {
+  color: #ff00ff;
+  filter: drop-shadow(0 0 12px rgba(255, 0, 255, 0.9));
+  transform: scale(1.1);
+}
+
 #contact p a {
   color: #00f0ff;
   text-decoration: none;
   font-weight: bold; /* Make links stand out more */
+  text-align: center;
 }
 
 #contact p a:hover {
