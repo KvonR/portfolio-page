@@ -30,7 +30,7 @@ const Projects = () => {
           {projectList.map((project, index) => (
             <div key={index} className="project-item">
               <img src={project.imageUrl} alt={project.title} className="project-image" />
-              <h3>{project.title}</h3>
+              <h3 className="project-title glitch" data-text={project.title}>{project.title}</h3>
               <p>{project.description}</p>
               <a href={project.link} target="_blank" rel="noopener noreferrer" className="btn-view-project">View Project</a>
             </div>

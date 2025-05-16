@@ -4,8 +4,30 @@
   color: white;
   font-size: 3em;
   letter-spacing: 0.2em;
+  word-spacing: 0.3em; /* Added consistent word spacing */
   font-family: 'Orbitron', sans-serif;
   font-weight: 600;
+}
+
+/* Word spacer styling to ensure consistent spacing */
+.word-spacer {
+  display: inline-block;
+  width: 0.3em !important; /* Important to prevent any hover effects from changing this */
+  white-space: pre !important; 
+  opacity: 1 !important; /* Ensure it doesn't disappear on hover */
+  position: relative !important; 
+  z-index: 0 !important;
+}
+
+/* Word spacer that maintains consistent spacing */
+.word-spacer {
+  display: inline-block !important;
+  width: 0.3em !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  user-select: none !important;
+  position: relative !important;
+  z-index: 1 !important;
 }
 
 .section-header.glitch::before,
@@ -49,8 +71,9 @@
   color: #ff00ff;
   text-shadow: 0 0 15px rgba(255, 0, 255, 0.8),
                0 0 30px rgba(255, 0, 255, 0.6);
-  animation: glitch-effect 1.5s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94),
-             glow-pulse-purple 2s infinite alternate;
+  animation: glow-pulse-purple 2s infinite alternate;
+  white-space: nowrap !important;
+  transform: none !important;
 }
 
 .section-header.glitch.glitch-hover::before,
@@ -82,6 +105,15 @@
   position: relative;
   animation: blue-pulse 1.5s infinite alternate;
   font-family: 'Orbitron', sans-serif; /* Ensure font consistency */
+  letter-spacing: 0.2em; /* Maintain consistent letter spacing */
+}
+
+/* Ensure the halves maintain their relative positioning */
+.blue-half,
+.purple-half {
+  display: inline-block !important;
+  position: relative !important;
+  white-space: nowrap !important;
 }
 
 .section-header.glitch .purple-half {
@@ -92,6 +124,20 @@
   position: relative;
   animation: purple-pulse 1.5s infinite alternate;
   font-family: 'Orbitron', sans-serif; /* Ensure font consistency */
+  letter-spacing: 0.2em; /* Maintain consistent letter spacing */
+}
+
+/* Prevent hover states from affecting spacing */
+.section-header.glitch:hover .blue-half,
+.section-header.glitch:hover .purple-half {
+  transform: none !important;
+}
+
+/* Override any transforms on hover */
+.section-header.glitch:hover .word-spacer {
+  width: 0.3em !important;
+  display: inline-block !important;
+  opacity: 0 !important;
 }
 
 /* Pulse animations for each half */
@@ -219,7 +265,7 @@
 
 /* More subtle glitch effect for the blue section */
 .section-header.glitch .blue-half::before {
-  content: attr(textContent);
+  content: attr(data-text);
   position: absolute;
   top: 0;
   left: 0;
@@ -232,7 +278,7 @@
 
 /* More subtle glitch effect for the purple section */
 .section-header.glitch .purple-half::before {
-  content: attr(textContent);
+  content: attr(data-text);
   position: absolute;
   top: 0;
   left: 0;

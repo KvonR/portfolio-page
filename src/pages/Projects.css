@@ -27,7 +27,7 @@
   display: grid; /* Using grid for more complex layouts if needed */
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
   gap: 35px;
-  transform: scale(1.05);
+  /* Removed transform scale to prevent inconsistent scaling */
 }
 
 .project-item {
@@ -41,7 +41,6 @@
 }
 
 .project-item:hover {
-  transform: translateY(-10px) scale(1.03);
   box-shadow: 0 0 25px rgba(255, 0, 255, 0.4), inset 0 0 15px rgba(255, 0, 255, 0.2);
   border-color: rgba(255, 0, 255, 0.5);
 }
@@ -67,6 +66,40 @@
   text-shadow: 0 0 5px rgba(0, 240, 255, 0.5); /* Subtle glow for project titles */
 }
 
+/* Project title glitch effect */
+.project-item h3.glitch {
+  display: inline-block;
+  color: #00f0ff;
+  text-shadow: 0 0 5px rgba(0, 240, 255, 0.8),
+               2px 2px #ff00c1,
+               -2px -2px #00fff9;
+  animation: title-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes title-glow {
+  0% {
+    text-shadow: 0 0 5px rgba(0, 240, 255, 0.8),
+                 2px 2px #ff00c1,
+                 -2px -2px #00fff9;
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.9),
+                 2px 2px #ff00c1,
+                 -2px -2px #00fff9,
+                 0 0 20px rgba(0, 240, 255, 0.7);
+  }
+}
+
+
+
+/* Hover effect just intensifies the glow */
+.project-item:hover h3.glitch {
+  text-shadow: 0 0 15px rgba(0, 240, 255, 0.9),
+               2px 2px #ff00c1,
+               -2px -2px #00fff9,
+               0 0 30px rgba(0, 240, 255, 0.7);
+}
+
 .project-item p {
   font-size: 1em;
   margin-bottom: 20px;
@@ -89,7 +122,7 @@
   text-decoration: none;
   font-weight: 700;
   letter-spacing: 0.5px;
-  transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease;
+  transition: box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
   box-shadow: 0 0 8px rgba(0, 240, 255, 0.6);
 }
 
@@ -97,5 +130,5 @@
   background: linear-gradient(45deg, #ff00ff, #d000ff);
   color: #FFFFFF;
   box-shadow: 0 0 12px rgba(255, 0, 255, 0.7);
-  transform: scale(1.05);
+  /* Removed transform to prevent movement */
 }

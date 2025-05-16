@@ -14,20 +14,16 @@ code {
 
 @keyframes glitch-effect {
   0%, 15%, 100% {
-    transform: translate(0);
-    /* text-shadow is now inherited from the element's style or hover style */
+    /* No movement at all */
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.7), 0 0 20px rgba(0, 240, 255, 0.7);
   }
   5% {
-    transform: translate(-3px, 3px);
-    /* Only the glitch-specific shadows. These will temporarily override the inherited ones. */
-    text-shadow: 2px 2px 3px rgba(255, 0, 0, 0.7), /* Red flicker */
-                 -2px -2px 3px rgba(0, 255, 255, 0.7); /* Cyan flicker */
+    /* No movement at all - only color/shadow changes */
+    text-shadow: 0 0 12px rgba(255, 0, 255, 0.8), 0 0 22px rgba(0, 240, 255, 0.8);
   }
   10% {
-    transform: translate(3px, -3px);
-    /* Only the glitch-specific shadows. These will temporarily override the inherited ones. */
-    text-shadow: 2px -2px 3px rgba(255, 0, 255, 0.7), /* Pink flicker */
-                 -2px 2px 3px rgba(0, 255, 0, 0.7);   /* Green flicker */
+    /* No movement at all - only color/shadow changes */
+    text-shadow: 0 0 15px rgba(255, 0, 255, 0.9), 0 0 25px rgba(0, 240, 255, 0.9);
   }
 }
 
