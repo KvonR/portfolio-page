@@ -14,33 +14,80 @@
   transition: color 0.3s ease, text-shadow 0.3s ease; /* ADDED transition */
 }
 
+.skills-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  padding: 0 20px;
+}
+
+.skills-category {
+  background-color: rgba(20, 20, 50, 0.7);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.2), inset 0 0 10px rgba(0, 240, 255, 0.1);
+  backdrop-filter: blur(3px);
+}
+
+.category-header {
+  font-size: 1.8em;
+  margin-bottom: 25px;
+  font-family: 'Orbitron', sans-serif;
+  color: #00f0ff;
+  text-shadow: 0 0 5px rgba(0, 240, 255, 0.8),
+               2px 2px #ff00c1,
+               -2px -2px #00fff9;
+  animation: category-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes category-glow {
+  0% {
+    text-shadow: 0 0 5px rgba(0, 240, 255, 0.8),
+                 2px 2px #ff00c1,
+                 -2px -2px #00fff9;
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.9),
+                 2px 2px #ff00c1,
+                 -2px -2px #00fff9,
+                 0 0 20px rgba(0, 240, 255, 0.7);
+  }
+}
+
+.skills-category:hover .category-header {
+  text-shadow: 0 0 15px rgba(0, 240, 255, 0.9),
+               2px 2px #ff00c1,
+               -2px -2px #00fff9,
+               0 0 30px rgba(0, 240, 255, 0.7);
+}
+
 .skills-list {
   list-style-type: none;
   padding: 0;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .skills-list li {
-  background-color: rgba(0, 240, 255, 0.1); /* Translucent Neon Blue background */
-  color: #00f0ff; /* Neon Blue text */
-  padding: 15px 30px;
-  border-radius: 30px; /* Pill shape */
-  font-size: 1.3em;
-  font-weight: 400; /* Orbitron regular */
-  border: 1px solid rgba(0, 240, 255, 0.4); /* Neon Blue border */
-  box-shadow: 0 0 8px rgba(0, 240, 255, 0.3), inset 0 0 5px rgba(0, 240, 255, 0.2);
-  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-  cursor: default; /* Indicate they are not clickable links unless they are */
+  background-color: rgba(0, 240, 255, 0.05);
+  color: #E0E0E0;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 1.1em;
+  font-family: 'Share Tech Mono', monospace;
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  transition: all 0.3s ease;
+  text-align: left;
 }
 
 .skills-list li:hover {
-  background-color: rgba(255, 0, 255, 0.2); /* Translucent Hot Pink background on hover */
-  color: #ff00ff; /* Hot Pink text */
-  border-color: rgba(255, 0, 255, 0.6);
-  box-shadow: 0 0 12px rgba(255, 0, 255, 0.5), inset 0 0 8px rgba(255, 0, 255, 0.3);
+  background-color: rgba(255, 0, 255, 0.1);
+  color: #FFFFFF;
+  border-color: rgba(255, 0, 255, 0.3);
+  padding-left: 25px;
+  text-shadow: 0 0 8px rgba(255, 0, 255, 0.5);
 }
 
 #skills h2.section-header:hover { /* MODIFIED: Made selector more specific and removed transition from hover state */

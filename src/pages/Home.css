@@ -18,11 +18,15 @@
 /* Re-enabling the glitch effect without the shaking */
 .home-content h1 {
   position: relative;
-  color: white;
+  color: #00f0ff;
   font-size: 3em;
   letter-spacing: 0.2em;
   font-family: 'Orbitron', sans-serif;
-  font-weight: 600; /* Slightly increased font weight for a tiny bit thicker appearance */
+  font-weight: 600;
+  text-shadow: 0 0 5px rgba(0, 240, 255, 0.8),
+               2px 2px #ff00c1,
+               -2px -2px #00fff9;
+  animation: home-title-glow 2s ease-in-out infinite alternate;
 }
 
 .home-content h1::before,
@@ -33,6 +37,7 @@
   left: 0;
   width: 100%;
   height: 100%;
+  background: rgba(10, 10, 30, 0.1);
 }
 
 .home-content h1::before {
@@ -90,13 +95,31 @@
   }
 }
 
-/* Add hover effect for the title text */
-.home-content h1:hover {
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-  animation: glitch-effect 1.5s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94); /* ADDED glitch animation on hover */
+@keyframes home-title-glow {
+  0% {
+    text-shadow: 0 0 5px rgba(0, 240, 255, 0.8),
+                 2px 2px #ff00c1,
+                 -2px -2px #00fff9;
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.9),
+                 2px 2px #ff00c1,
+                 -2px -2px #00fff9,
+                 0 0 20px rgba(0, 240, 255, 0.7);
+  }
 }
 
-/* Stop the default glitch effect on hover to allow our split color effect to take over */
+/* Add hover effect for the title text */
+.home-content h1:hover {
+  text-shadow: 0 0 15px rgba(0, 240, 255, 0.9),
+               2px 2px #ff00c1,
+               -2px -2px #00fff9,
+               0 0 30px rgba(0, 240, 255, 0.7);
+  animation: glitch-effect 1.5s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94),
+             home-title-glow 2s infinite alternate;
+}
+
+/* Enhance glitch effect on hover */
 .home-content h1:hover::before,
 .home-content h1:hover::after {
   animation: none; /* Disable animations on hover */
