@@ -43,9 +43,40 @@
 
 .experience-item h3 {
   font-size: 2em; /* Larger title */
-  color: #00f0ff;
   margin-bottom: 10px;
   font-family: 'Orbitron', sans-serif;
+}
+
+/* Job title glitch effect - matching the project titles */
+.experience-item h3.glitch {
+  display: inline-block;
+  color: #00f0ff;
+  text-shadow: 0 0 5px rgba(0, 240, 255, 0.8),
+               2px 2px #ff00c1,
+               -2px -2px #00fff9;
+  animation: job-title-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes job-title-glow {
+  0% {
+    text-shadow: 0 0 5px rgba(0, 240, 255, 0.8),
+                 2px 2px #ff00c1,
+                 -2px -2px #00fff9;
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.9),
+                 2px 2px #ff00c1,
+                 -2px -2px #00fff9,
+                 0 0 20px rgba(0, 240, 255, 0.7);
+  }
+}
+
+/* Hover effect just intensifies the glow */
+.experience-item:hover h3.glitch {
+  text-shadow: 0 0 15px rgba(0, 240, 255, 0.9),
+               2px 2px #ff00c1,
+               -2px -2px #00fff9,
+               0 0 30px rgba(0, 240, 255, 0.7);
 }
 
 .experience-item h4 {

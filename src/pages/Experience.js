@@ -34,7 +34,7 @@ const Experience = () => {
         <div className="experience-list">
           {experiences.map(exp => (
             <div key={exp.id} className="experience-item">
-              <h3>{exp.title}</h3>
+              <h3 className="glitch" data-text={exp.title}>{exp.title}</h3>
               <h4>{exp.company} | {exp.date}</h4>
               <p className="experience-location">{exp.location}</p>
               <p>{exp.description}</p>
