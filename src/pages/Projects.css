@@ -93,12 +93,13 @@
 
 
 
-/* Hover effect just intensifies the glow */
+/* Color inversion effect on hover - changes from cyan to pink */
 .project-item:hover h3.glitch {
-  text-shadow: 0 0 15px rgba(0, 240, 255, 0.9),
-               2px 2px #ff00c1,
-               -2px -2px #00fff9,
-               0 0 30px rgba(0, 240, 255, 0.7);
+  color: #ff00ff; /* Hot pink/purple color */
+  text-shadow: 0 0 15px rgba(255, 0, 255, 0.9),
+               2px 2px #00f0ff,
+               -2px -2px #00f0ff,
+               0 0 30px rgba(255, 0, 255, 0.7);
 }
 
 .project-item p {
