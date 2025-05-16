@@ -9,25 +9,33 @@ const Skills = () => {
       'JavaScript',
       'HTML5',
       'CSS3',
-      'Responsive Design',
-      'UI/UX'
+      'UI/UX Design',
+      'JavaFX'
     ],
     'Backend Development': [
       'Node.js',
       'PHP',
       'RESTful APIs',
-      'Express.js'
+      'Django',
+      'Python',
+      'Java'
     ],
     'Database': [
-      'SQL',
+      'PostgreSQL',
       'MySQL',
+      'Firebase',
       'Database Design'
     ],
     'Development Tools': [
       'Git',
       'VS Code',
       'npm',
-      'Webpack'
+      'Webpack',
+      'Docker'
+    ],
+    'Mobile Development': [
+      'Swift',
+      'React Native'
     ],
     'Professional Skills': [
       'Problem Solving',
