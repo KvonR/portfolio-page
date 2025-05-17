@@ -17,7 +17,9 @@ footer {
   margin: 15px 0 25px 0;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
   gap: 25px;
+  max-width: 100%;
 }
 
 .footer-links li a {
@@ -79,4 +81,19 @@ footer p {
   color: #FFFFFF;
   font-size: 0.85em;
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+}
+
+/* Add responsive styles */
+@media (max-width: 768px) {
+  .footer-links {
+    gap: 15px; /* Smaller gap on mobile */
+  }
+  
+  .footer-links li a {
+    font-size: 0.9em; /* Slightly smaller font on mobile */
+  }
+  
+  .social-links {
+    gap: 20px; /* Smaller gap for social icons */
+  }
 }

@@ -3,15 +3,18 @@ import './Footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { handleSmoothScroll } from '../utils/scrollUtils';
 
 const Footer = () => {
   return (
     <footer>
       <ul className="footer-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#home" onClick={handleSmoothScroll}>Home</a></li>
+        <li><a href="#experience" onClick={handleSmoothScroll}>Experience</a></li>
+        <li><a href="#projects" onClick={handleSmoothScroll}>Projects</a></li>
+        <li><a href="#skills" onClick={handleSmoothScroll}>Skills</a></li>
+        <li><a href="#about-me" onClick={handleSmoothScroll}>About Me</a></li>
+        <li><a href="#contact" onClick={handleSmoothScroll}>Contact</a></li>
       </ul>
       <div className="social-links">
         <a href="https://github.com/kvonr" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
