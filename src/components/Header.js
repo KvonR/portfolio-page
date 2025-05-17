@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Header.css';
 import { handleSmoothScroll } from '../utils/scrollUtils';
 
 const Header = () => {
+  const [scrolled, setScrolled] = useState(false);
+  
+  // Effect to detect scroll and update header style
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 50;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrolled]);
+
   return (
-    <header>
+    <header className={scrolled ? 'scrolled' : ''}>
       <nav>
         <ul>
           <li><a href="#home" onClick={handleSmoothScroll}>Home</a></li>
