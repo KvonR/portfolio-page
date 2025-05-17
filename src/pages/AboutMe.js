@@ -13,16 +13,16 @@ const AboutMe = () => {
         <Parallax speed={5} className="about-me-text-parallax-wrapper">
           <div className="about-me-text">
             <p>
-              Hi, I'm Kevin Rahimi — a passionate and versatile developer with a first-class BSc in Computer Science from the University of Liverpool. I thrive on solving problems through clean, efficient code and have experience across a range of technologies, from Java and Spring Boot to Python, Laravel, and React Native.
+              Hi, I'm Kevin Rahimi — a versatile developer who writes Python automation bots, chatbots, and music players with metadata editing capabilities. I also build AI-powered mobile apps with React Native and develop backend systems with Python Django and Java.
             </p>
             <p>
-              Whether it's building eCommerce platforms with Magento, creating AI-powered mobile apps, or automating workflows with Python, I enjoy turning complex challenges into intuitive, real-world solutions. My background also includes experience in consulting and technical documentation, giving me strong communication skills and a collaborative mindset.
+              Whether it's streamlining workflows, enhancing user experience, or creating intelligent features, I enjoy turning complex challenges into intuitive, real-world solutions. With a first-class Computer Science degree behind me and experience in consulting and technical documentation, I've developed strong communication skills and a collaborative approach to problem-solving.
             </p>
             <p>
-              I’m always learning, always building, and always looking for meaningful projects where I can make an impact — especially in tech-driven spaces like digital transformation, fitness, or automation.
+              I'm always learning, always building, and looking for meaningful projects where I can make an impact — especially in areas like digital transformation, fitness, or automation.
             </p>
             <p>
-              Let’s build something great together.
+              Let's build something great together.
             </p>
           </div>
         </Parallax>
