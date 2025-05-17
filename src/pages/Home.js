@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import './Home.css';
 import { Parallax } from 'react-scroll-parallax';
+import { handleSmoothScroll } from '../utils/scrollUtils';
 
 // Force load Orbitron font with white text and initial blue glow
 const orbitronStyle = {
@@ -174,7 +175,7 @@ const Home = () => {
         </Parallax>
       </div>
       <Parallax speed={15} className="home-button-parallax-wrapper">
-        <a href="#projects" className="btn">View My Work</a>
+        <a href="#projects" className="btn" onClick={handleSmoothScroll}>View My Work</a>
       </Parallax>
     </section>
   );
