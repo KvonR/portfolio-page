@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './Contact.css'; 
 import { Parallax } from 'react-scroll-parallax'; // ADDED
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [status, setStatus] = useState({ submitted: false, success: false, message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const form = useRef();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -15,8 +19,34 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Message sent!\nName: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message}`);
-    setFormData({ name: '', email: '', message: '' });
+    setIsSubmitting(true);
+    setStatus({ submitted: false, success: false, message: '' });
+
+    // EmailJS configuration - using environment variables for security
+    const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+    const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+
+    emailjs.sendForm(serviceId, templateId, form.current, publicKey)
+      .then((result) => {
+        console.log('Email sent successfully:', result.text);
+        setStatus({
+          submitted: true,
+          success: true,
+          message: 'Your message has been sent! I\'ll get back to you soon.'
+        });
+        setFormData({ name: '', email: '', message: '' });
+        setIsSubmitting(false);
+      })
+      .catch((error) => {
+        console.error('Error sending email:', error.text);
+        setStatus({
+          submitted: true,
+          success: false,
+          message: 'There was an error sending your message. Please try again later.'
+        });
+        setIsSubmitting(false);
+      });
   };
 
   return (
@@ -25,7 +55,7 @@ const Contact = () => {
         <h2 className="section-header glitch" data-text="Contact Me">Contact Me</h2>
       </Parallax>
       <Parallax speed={10} className="contact-content-parallax-wrapper"> {/* ADDED Parallax for content */}
-        <form onSubmit={handleSubmit}>
+        <form ref={form} onSubmit={handleSubmit} className={isSubmitting ? 'submitting' : ''}>
           <label>
             Name:
             <input
@@ -34,6 +64,7 @@ const Contact = () => {
               value={formData.name}
               onChange={handleChange}
               required
+              disabled={isSubmitting}
             />
           </label>
           <label>
@@ -44,6 +75,7 @@ const Contact = () => {
               value={formData.email}
               onChange={handleChange}
               required
+              disabled={isSubmitting}
             />
           </label>
           <label>
@@ -53,9 +85,18 @@ const Contact = () => {
               value={formData.message}
               onChange={handleChange}
               required
+              disabled={isSubmitting}
             />
           </label>
-          <button type="submit">Send</button>
+          <button type="submit" disabled={isSubmitting}>
+            {isSubmitting ? 'Sending...' : 'Send'}
+          </button>
+          
+          {status.submitted && (
+            <div className={`submit-status ${status.success ? 'success' : 'error'}`}>
+              {status.message}
+            </div>
+          )}
         </form>
         <div className="contact-links">
           <p className="contact-item">
