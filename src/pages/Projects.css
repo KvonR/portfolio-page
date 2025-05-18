@@ -134,3 +134,24 @@
   box-shadow: 0 0 12px rgba(255, 0, 255, 0.7);
   /* Removed transform to prevent movement */
 }
+
+/* Coming Soon button - grayed out version */
+.btn-coming-soon {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1em;
+  color: #CCCCCC;
+  background: rgba(100, 100, 120, 0.3);
+  border: 1px solid rgba(150, 150, 170, 0.5);
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: not-allowed;
+  box-shadow: 0 0 5px rgba(150, 150, 170, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+.btn-coming-soon:hover {
+  box-shadow: 0 0 8px rgba(150, 150, 170, 0.5);
+}

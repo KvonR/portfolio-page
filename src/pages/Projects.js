@@ -2,10 +2,18 @@ import React from 'react';
 import './Projects.css';
 import retrosonicImage from '../assets/retrosonic.png';
 import roboticsImage from '../assets/Robotics.png';
+import trainAInImage from '../assets/TrainAIn.png';
 import { Parallax } from 'react-scroll-parallax';
 
 const Projects = () => {
   const projectList = [
+    {
+      title: 'TrainAIn',
+      description: 'AI fitness body analyzer with GPT Vision on React Native, emulating a personal trainer for real-time feedback and guidance.',
+      imageUrl: trainAInImage,
+      link: 'https://github.com/kvonr/trainain',
+      comingSoon: true
+    },
     {
       title: 'Retrosonic',
       description: 'A JavaFX music player I built with advanced playlist management and audio visualization.',
@@ -16,7 +24,7 @@ const Projects = () => {
       title: 'Robotics Algorithm',
       description: 'A wall-following algorithm for a robotic floor hoover, designed for efficient cleaning.',
       imageUrl: roboticsImage,
-      link: 'https://github.com/kvonr/robotics-algorithm'
+      link: 'https://github.com/KvonR/Bug1-2-Algorithm'
     }
   ];
 
@@ -32,7 +40,11 @@ const Projects = () => {
               <img src={project.imageUrl} alt={project.title} className="project-image" />
               <h3 className="project-title glitch" data-text={project.title}>{project.title}</h3>
               <p>{project.description}</p>
-              <a href={project.link} target="_blank" rel="noopener noreferrer" className="btn-view-project">View Project</a>
+              {project.comingSoon ? (
+                <span className="btn-coming-soon">Coming Soon</span>
+              ) : (
+                <a href={project.link} target="_blank" rel="noopener noreferrer" className="btn-view-project">View Project</a>
+              )}
             </div>
           ))}
         </div>
