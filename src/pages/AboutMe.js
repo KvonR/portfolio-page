@@ -23,7 +23,7 @@ const AboutMe = () => {
               I'm always learning, always building, and looking for meaningful projects where I can make an impact — especially in areas like digital transformation, fitness, or automation.
             </p>
             <p>
-              <HighlightedText effect="cyber">Let's build something great together.</HighlightedText>
+              <HighlightedText effect="neon-purple">Let's build something great together.</HighlightedText>
             </p>
           </div>
         </Parallax>

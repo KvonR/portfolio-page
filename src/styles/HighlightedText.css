@@ -5,7 +5,7 @@
   transition: all 0.3s ease;
 }
 
-/* Neon glow effect */
+/* Neon glow effect (cyan) */
 .highlighted-text.neon {
   color: #fff;
   text-shadow: 0 0 5px #00f0ff, 
@@ -25,13 +25,34 @@
   transform: translateY(-2px);
 }
 
+/* Neon glow effect (purple) */
+.highlighted-text.neon-purple {
+  color: #fff;
+  text-shadow: 0 0 5px #ff00ff, 
+               0 0 10px #ff00ff,
+               0 0 15px #ff00ff;
+  animation: neon-pulse-purple 2s infinite alternate;
+  cursor: default;
+  padding: 2px 4px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.highlighted-text.neon-purple:hover {
+  color: #ff00ff;
+  background-color: rgba(255, 0, 255, 0.1);
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+  transform: translateY(-2px);
+}
+
 /* Cyber effect with glitches */
 .highlighted-text.cyber {
-  color: #ff00ff;
+  color: #fff;
   font-family: 'Orbitron', sans-serif;
   letter-spacing: 1px;
   text-shadow: 0 0 5px #ff00ff, 
-               0 0 10px rgba(255, 0, 255, 0.8);
+               0 0 10px #ff00ff,
+               0 0 15px rgba(255, 0, 255, 0.6);
   animation: cyber-glitch 4s infinite;
   cursor: default;
   padding: 2px 4px;
@@ -63,6 +84,24 @@
   }
 }
 
+/* Animation for the purple neon effect */
+@keyframes neon-pulse-purple {
+  0% {
+    text-shadow: 0 0 5px #ff00ff,
+                 0 0 10px #ff00ff;
+  }
+  50% {
+    text-shadow: 0 0 5px #ff00ff,
+                 0 0 10px #ff00ff,
+                 0 0 15px #ff00ff,
+                 0 0 20px #ff00ff;
+  }
+  100% {
+    text-shadow: 0 0 5px #ff00ff,
+                 0 0 10px #ff00ff;
+  }
+}
+
 /* Animation for the cyber effect */
 @keyframes cyber-glitch {
   0% {
@@ -74,8 +113,9 @@
   21% {
     transform: skew(-2deg);
     text-shadow: 0 0 5px #ff00ff, 
-                 0 0 10px rgba(255, 0, 255, 0.8),
-                 3px 0 5px rgba(0, 255, 255, 0.8);
+                 0 0 10px #ff00ff,
+                 0 0 15px rgba(255, 0, 255, 0.8),
+                 3px 0 5px rgba(0, 255, 255, 0.5);
   }
   23% {
     transform: skew(0deg);
@@ -86,8 +126,9 @@
   41% {
     transform: skew(2deg);
     text-shadow: 0 0 5px #ff00ff, 
-                 0 0 10px rgba(255, 0, 255, 0.8),
-                 -3px 0 5px rgba(0, 255, 255, 0.8);
+                 0 0 10px #ff00ff,
+                 0 0 15px rgba(255, 0, 255, 0.8),
+                 -3px 0 5px rgba(0, 255, 255, 0.5);
   }
   43% {
     transform: skew(0deg);
