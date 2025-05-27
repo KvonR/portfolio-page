@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import AboutMe from './pages/AboutMe';
 import Experience from './pages/Experience';
 import GlitchHeaders from './components/GlitchHeaders'; // Import the glitch effect component
+import MobileSplitHeaders from './components/MobileSplitHeaders'; // Import mobile split-color headers
 import BackToTop from './components/BackToTop'; // Import back to top button
 import BackToTopSection from './components/BackToTopSection'; // Import the back to top section
 import { setupScrollRevealAnimations } from './utils/scrollReveal';
@@ -27,6 +28,7 @@ function App() {
       <div className="App">
         <Header />
         <GlitchHeaders /> {/* This adds the glitch effect to all section headers */}
+        <MobileSplitHeaders /> {/* This adds mobile split-color effect to section headers */}
         <main>
           <Home />
           <Experience />

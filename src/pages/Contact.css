@@ -286,6 +286,15 @@ form.submitting::after {
 
   #contact h2.section-header {
     font-size: 2em;
+    /* Disable hover transitions */
+    transition: none !important;
+  }
+  
+  /* Remove hover effects for section title on mobile */
+  #contact h2.section-header:hover {
+    color: inherit !important;
+    text-shadow: none !important;
+    animation: none !important;
   }
 
   #contact form {

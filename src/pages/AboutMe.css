@@ -124,6 +124,15 @@
 
   #about-me h2.section-header {
     font-size: 2em;
+    /* Disable hover transitions */
+    transition: none !important;
+  }
+  
+  /* Remove hover effects for section title on mobile */
+  #about-me h2.section-header:hover {
+    color: inherit !important;
+    text-shadow: none !important;
+    animation: none !important;
   }
 
   .about-me-text p {

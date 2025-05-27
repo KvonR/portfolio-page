@@ -135,6 +135,15 @@
   #experience h2.section-header {
     font-size: 2.2em;
     margin-bottom: 30px;
+    /* Disable hover transitions */
+    transition: none !important;
+  }
+
+  /* Remove hover effects for section title on mobile */
+  #experience h2.section-header:hover {
+    color: inherit !important;
+    text-shadow: none !important;
+    animation: none !important;
   }
 
   .experience-list {
