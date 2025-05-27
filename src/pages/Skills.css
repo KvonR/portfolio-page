@@ -104,3 +104,92 @@
                0 0 30px rgba(255, 0, 255, 0.6);
   animation: glitch-effect 1.5s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94); /* ADDED glitch animation on hover */
 }
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  #skills {
+    padding: 40px 15px;
+  }
+
+  #skills h2.section-header {
+    font-size: 2.2em;
+    margin-bottom: 40px;
+  }
+
+  .skills-categories {
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 25px;
+    padding: 0 10px;
+  }
+
+  .skills-category {
+    padding: 20px;
+  }
+
+  .category-header {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+
+  .skills-list {
+    gap: 12px;
+  }
+
+  .skills-list li {
+    padding: 10px 15px;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  #skills {
+    padding: 30px 10px;
+  }
+
+  #skills h2.section-header {
+    font-size: 2em;
+  }
+
+  .skills-categories {
+    gap: 20px;
+    padding: 0 5px;
+  }
+
+  .skills-category {
+    padding: 15px;
+  }
+
+  .category-header {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+  }
+
+  .skills-list li {
+    padding: 8px 12px;
+    font-size: 0.95em;
+  }
+}
+
+/* Remove hover effects on touch devices */
+@media (hover: none) {
+  .skills-category:hover {
+    transform: none;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.3), 0 0 30px rgba(0, 240, 255, 0.2);
+    border-color: rgba(0, 240, 255, 0.3);
+  }
+
+  .skills-category:hover .category-header {
+    color: #00f0ff;
+    text-shadow: 0 0 5px rgba(0, 240, 255, 0.8),
+                 2px 2px #ff00c1,
+                 -2px -2px #00fff9;
+  }
+
+  .skills-list li:hover {
+    background-color: rgba(0, 240, 255, 0.05);
+    color: #E0E0E0;
+    border-color: rgba(0, 240, 255, 0.2);
+    padding-left: 20px;
+    text-shadow: none;
+  }
+}

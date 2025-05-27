@@ -4,6 +4,7 @@ import { handleSmoothScroll } from '../utils/scrollUtils';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   // Effect to detect scroll and update header style
   useEffect(() => {
@@ -20,16 +21,31 @@ const Header = () => {
     };
   }, [scrolled]);
 
+  const handleMobileMenuClick = (e) => {
+    handleSmoothScroll(e);
+    setMobileMenuOpen(false); // Close menu after clicking a link
+  };
+
   return (
     <header className={scrolled ? 'scrolled' : ''}>
       <nav>
-        <ul>
-          <li><a href="#home" onClick={handleSmoothScroll}>Home</a></li>
-          <li><a href="#experience" onClick={handleSmoothScroll}>Experience</a></li>
-          <li><a href="#projects" onClick={handleSmoothScroll}>Projects</a></li>
-          <li><a href="#skills" onClick={handleSmoothScroll}>Skills</a></li>
-          <li><a href="#about-me" onClick={handleSmoothScroll}>About Me</a></li>
-          <li><a href="#contact" onClick={handleSmoothScroll}>Contact</a></li>
+        <button 
+          className="mobile-menu-toggle"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle navigation menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        
+        <ul className={mobileMenuOpen ? 'mobile-menu-open' : ''}>
+          <li><a href="#home" onClick={handleMobileMenuClick}>Home</a></li>
+          <li><a href="#experience" onClick={handleMobileMenuClick}>Experience</a></li>
+          <li><a href="#projects" onClick={handleMobileMenuClick}>Projects</a></li>
+          <li><a href="#skills" onClick={handleMobileMenuClick}>Skills</a></li>
+          <li><a href="#about-me" onClick={handleMobileMenuClick}>About Me</a></li>
+          <li><a href="#contact" onClick={handleMobileMenuClick}>Contact</a></li>
         </ul>
       </nav>
     </header>

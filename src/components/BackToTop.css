@@ -83,3 +83,14 @@
     font-size: 1rem;
   }
 }
+
+/* Remove hover effects on touch devices */
+@media (hover: none) {
+  .back-to-top:hover {
+    background: rgba(10, 10, 30, 0.8);
+    color: #00f0ff;
+    border-color: #00f0ff;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+    transform: none;
+  }
+}

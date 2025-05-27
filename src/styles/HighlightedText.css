@@ -137,3 +137,41 @@
     transform: skew(0deg);
   }
 }
+
+/* Remove hover effects on touch devices */
+@media (hover: none) {
+  .highlighted-text.neon:hover {
+    color: #fff;
+    background-color: transparent;
+    box-shadow: none;
+    transform: none;
+  }
+
+  .highlighted-text.neon-purple:hover {
+    color: #fff;
+    background-color: transparent;
+    box-shadow: none;
+    transform: none;
+  }
+
+  .highlighted-text.cyber:hover {
+    background-color: transparent;
+    box-shadow: none;
+    transform: none;
+  }
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .highlighted-text {
+    font-size: 0.95em;
+    padding: 1px 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  .highlighted-text {
+    font-size: 0.9em;
+    padding: 1px 2px;
+  }
+}

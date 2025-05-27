@@ -312,3 +312,72 @@
     text-shadow: 0 0 15px #ff00ff;
   }
 }
+
+/* Mobile responsive styles for section headers */
+@media (max-width: 768px) {
+  .section-header.glitch {
+    font-size: 2.2em;
+    letter-spacing: 0.1em;
+    word-spacing: 0.2em;
+  }
+
+  .blue-half,
+  .purple-half {
+    display: inline !important;
+    white-space: normal !important;
+  }
+
+  .word-spacer {
+    width: 0.2em !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-header.glitch {
+    font-size: 2em;
+    letter-spacing: 0.05em;
+    word-spacing: 0.1em;
+  }
+
+  .word-spacer {
+    width: 0.1em !important;
+  }
+}
+
+/* Remove complex hover effects on touch devices */
+@media (hover: none) {
+  .section-header.glitch:hover {
+    color: white;
+    text-shadow: 0 0 8px #00f0ff, 0 0 12px #00f0ff, 0 0 2px #fff;
+    animation: none;
+    white-space: normal !important;
+    transform: none !important;
+  }
+
+  .section-header.glitch:hover::before,
+  .section-header.glitch:hover::after {
+    animation: glitch-anim 5s infinite linear alternate-reverse,
+               glitch-anim2 1s infinite linear alternate-reverse;
+    opacity: 1;
+  }
+
+  .section-header.glitch.glitch-hover {
+    color: white;
+    text-shadow: 0 0 8px #00f0ff, 0 0 12px #00f0ff, 0 0 2px #fff;
+    animation: none;
+  }
+
+  .section-header.glitch.glitch-hover::before,
+  .section-header.glitch.glitch-hover::after {
+    animation: none;
+    opacity: 0;
+  }
+
+  .section-header.glitch .blue-half::before,
+  .section-header.glitch .purple-half::before,
+  .section-header.glitch .blue-half::after,
+  .section-header.glitch .purple-half::after {
+    animation: none;
+    opacity: 0;
+  }
+}

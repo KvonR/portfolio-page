@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './Home.css';
 import { Parallax } from 'react-scroll-parallax';
 import { handleSmoothScroll } from '../utils/scrollUtils';
@@ -13,6 +13,21 @@ const orbitronStyle = {
 const Home = () => {
   const canvasRef = useRef(null);
   const subtitleRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Effect for detecting mobile devices
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkIfMobile();
+    window.addEventListener('resize', checkIfMobile);
+
+    return () => {
+      window.removeEventListener('resize', checkIfMobile);
+    };
+  }, []);
 
   // Effect for initializing the subtitle glow animation
   useEffect(() => {
@@ -111,72 +126,99 @@ const Home = () => {
     <section id="home">
       <canvas ref={canvasRef} className="neon-canvas"></canvas>
       <div className="home-content">
-        <Parallax speed={-10}>
-          <h1 
-            className="glitch" 
-            data-text="Building the Web. One Line at a Time."
-            onMouseEnter={(e) => {
-              // Split the text into the two sentences
-              
-              // Create the split effect with the first sentence blue and second sentence purple
-              e.target.innerHTML = `
-                <span class="blue-half">Building the Web<span class="period">.</span></span> 
-                <span class="purple-half">One Line at a Time<span class="period">.</span></span>
-              `;
-              
-              // Add glitch hover class
-              e.target.classList.add('glitch-hover');
-            }}
-            onMouseLeave={(e) => {
-              // Restore the original text with pulsating periods
-              e.target.innerHTML = 'Building the Web<span class="period">.</span> One Line at a Time<span class="period">.</span>';
-              
-              // Remove glitch hover class
-              e.target.classList.remove('glitch-hover');
-            }}
-          >Building the Web<span class="period">.</span> One Line at a Time<span class="period">.</span></h1>
-        </Parallax>
-        <Parallax speed={5}>
+        {isMobile ? (
+          <h1 className="glitch mobile-title">
+            <div className="title-line">
+              <span className="blue-half">Building the Web<span className="period">.</span></span>
+            </div>
+            <div className="title-line">
+              <span className="purple-half">One Line at a Time<span className="period">.</span></span>
+            </div>
+          </h1>
+        ) : (
+          <Parallax speed={-10}>
+            <h1 
+              className="glitch" 
+              data-text="Building the Web. One Line at a Time."
+              onMouseEnter={(e) => {
+                // Split the text into the two sentences
+                
+                // Create the split effect with the first sentence blue and second sentence purple
+                e.target.innerHTML = `
+                  <span class="blue-half">Building the Web<span class="period">.</span></span> 
+                  <span class="purple-half">One Line at a Time<span class="period">.</span></span>
+                `;
+                
+                // Add glitch hover class
+                e.target.classList.add('glitch-hover');
+              }}
+              onMouseLeave={(e) => {
+                // Restore the original text with pulsating periods
+                e.target.innerHTML = 'Building the Web<span class="period">.</span> One Line at a Time<span class="period">.</span>';
+                
+                // Remove glitch hover class
+                e.target.classList.remove('glitch-hover');
+              }}
+            >Building the Web<span class="period">.</span> One Line at a Time<span class="period">.</span></h1>
+          </Parallax>
+        )}
+        
+        {isMobile ? (
           <p 
             ref={subtitleRef}
             className="subtitle-text" 
             style={orbitronStyle}
-            onMouseEnter={(e) => {
-              // Apply purple glow on hover
-              e.currentTarget.style.textShadow = '0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff';
-              // Start a pulsating animation
-              e.currentTarget.animate([
-                { textShadow: '0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff' },
-                { textShadow: '0 0 15px #ff00ff, 0 0 25px #ff00ff, 0 0 35px #ff00ff' },
-                { textShadow: '0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff' }
-              ], {
-                duration: 2000,
-                iterations: Infinity
-              });
-            }}
-            onMouseLeave={(e) => {
-              // Restore blue glow when not hovering
-              e.currentTarget.style.textShadow = '0 0 10px #00ccff, 0 0 20px #00ccff, 0 0 30px #00ccff';
-              // Clear any running animations
-              e.currentTarget.getAnimations().forEach(anim => anim.cancel());
-              // Start blue glow pulsating
-              e.currentTarget.animate([
-                { textShadow: '0 0 10px #00ccff, 0 0 20px #00ccff, 0 0 30px #00ccff' },
-                { textShadow: '0 0 15px #00ccff, 0 0 25px #00ccff, 0 0 35px #00ccff' },
-                { textShadow: '0 0 10px #00ccff, 0 0 20px #00ccff, 0 0 30px #00ccff' }
-              ], {
-                duration: 2000,
-                iterations: Infinity
-              });
-            }}
           >
             Hi, I'm Kev — a Web & Software Developer.
           </p>
-        </Parallax>
+        ) : (
+          <Parallax speed={5}>
+            <p 
+              ref={subtitleRef}
+              className="subtitle-text" 
+              style={orbitronStyle}
+              onMouseEnter={(e) => {
+                // Apply purple glow on hover
+                e.currentTarget.style.textShadow = '0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff';
+                // Start a pulsating animation
+                e.currentTarget.animate([
+                  { textShadow: '0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff' },
+                  { textShadow: '0 0 15px #ff00ff, 0 0 25px #ff00ff, 0 0 35px #ff00ff' },
+                  { textShadow: '0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff' }
+                ], {
+                  duration: 2000,
+                  iterations: Infinity
+                });
+              }}
+              onMouseLeave={(e) => {
+                // Restore blue glow when not hovering
+                e.currentTarget.style.textShadow = '0 0 10px #00ccff, 0 0 20px #00ccff, 0 0 30px #00ccff';
+                // Clear any running animations
+                e.currentTarget.getAnimations().forEach(anim => anim.cancel());
+                // Start blue glow pulsating
+                e.currentTarget.animate([
+                  { textShadow: '0 0 10px #00ccff, 0 0 20px #00ccff, 0 0 30px #00ccff' },
+                  { textShadow: '0 0 15px #00ccff, 0 0 25px #00ccff, 0 0 35px #00ccff' },
+                  { textShadow: '0 0 10px #00ccff, 0 0 20px #00ccff, 0 0 30px #00ccff' }
+                ], {
+                  duration: 2000,
+                  iterations: Infinity
+                });
+              }}
+            >
+              Hi, I'm Kev — a Web & Software Developer.
+            </p>
+          </Parallax>
+        )}
       </div>
-      <Parallax speed={15} className="home-button-parallax-wrapper">
+      
+      {isMobile ? (
         <a href="#projects" className="btn" onClick={handleSmoothScroll}>View My Work</a>
-      </Parallax>
+      ) : (
+        <Parallax speed={15} className="home-button-parallax-wrapper">
+          <a href="#projects" className="btn" onClick={handleSmoothScroll}>View My Work</a>
+        </Parallax>
+      )}
     </section>
   );
 };

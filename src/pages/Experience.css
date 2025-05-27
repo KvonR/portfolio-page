@@ -134,3 +134,114 @@
   animation: glitch-effect 1.5s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94); /* ADDED glitch animation on hover */
   /* transition: color 0.3s ease, text-shadow 0.3s ease; */ /* Can be kept or removed as it's on base */
 }
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  #experience {
+    padding: 40px 15px;
+  }
+
+  #experience h2.section-header {
+    font-size: 2.2em;
+    margin-bottom: 30px;
+  }
+
+  .experience-list {
+    gap: 25px;
+    max-width: 100%;
+  }
+
+  .experience-item {
+    padding: 20px;
+  }
+
+  .experience-item h3 {
+    font-size: 1.6em;
+    margin-bottom: 8px;
+  }
+
+  .experience-item h4 {
+    font-size: 1.1em;
+    margin-bottom: 4px;
+  }
+
+  .experience-location {
+    font-size: 0.95em;
+    margin-bottom: 12px;
+  }
+
+  .experience-item p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+
+  .experience-skills {
+    font-size: 0.95em;
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  #experience {
+    padding: 30px 10px;
+  }
+
+  #experience h2.section-header {
+    font-size: 2em;
+  }
+
+  .experience-list {
+    gap: 20px;
+  }
+
+  .experience-item {
+    padding: 15px;
+  }
+
+  .experience-item h3 {
+    font-size: 1.4em;
+  }
+
+  .experience-item h4 {
+    font-size: 1em;
+  }
+
+  .experience-location {
+    font-size: 0.9em;
+  }
+
+  .experience-item p {
+    font-size: 0.95em;
+  }
+
+  .experience-skills {
+    font-size: 0.9em;
+  }
+}
+
+/* Remove hover effects on touch devices */
+@media (hover: none) {
+  .experience-item:hover {
+    transform: none;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.3), 0 0 30px rgba(0, 240, 255, 0.2);
+    border-color: rgba(0, 240, 255, 0.3);
+  }
+
+  .experience-item:hover h3.glitch {
+    color: #00f0ff;
+    text-shadow: 0 0 5px rgba(0, 240, 255, 0.8),
+                 2px 2px #ff00c1,
+                 -2px -2px #00fff9;
+  }
+
+  .experience-item h4:hover {
+    color: #e0e0e0;
+    text-shadow: 0 0 10px #00f0ff, 0 0 10px #00f0ff;
+  }
+
+  .experience-skills:hover {
+    color: #00f0ff;
+    text-shadow: none;
+  }
+}

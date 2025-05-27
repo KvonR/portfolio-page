@@ -104,25 +104,70 @@ h2.section-header {
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-h2.section-header:hover {
-  color: #ff00ff; /* Hot pink/purple color on hover */
-  text-shadow: 0 0 15px rgba(255, 0, 255, 0.8),
-               0 0 30px rgba(255, 0, 255, 0.6);
-  animation: glitch-effect 1.5s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
 a {
   color: #00f0ff; /* Neon Blue for links */
   text-decoration: none;
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-a:hover {
-  color: #ff00ff; /* Hot Pink for link hover */
-  text-decoration: none;
-  text-shadow: 0 0 8px #ff00ff, 
-               0 0 12px #ff00ff, 
-               0 0 2px #fff; /* Matching intense glow for hover */
+/* Hover effects only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  h2.section-header:hover {
+    color: #ff00ff; /* Hot pink/purple color on hover */
+    text-shadow: 0 0 15px rgba(255, 0, 255, 0.8),
+                 0 0 30px rgba(255, 0, 255, 0.6);
+    animation: glitch-effect 1.5s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  a:hover {
+    color: #ff00ff; /* Hot Pink for link hover */
+    text-decoration: none;
+    text-shadow: 0 0 8px #ff00ff, 
+                 0 0 12px #ff00ff, 
+                 0 0 2px #fff; /* Matching intense glow for hover */
+  }
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  section {
+    padding: 30px 15px;
+    margin-bottom: 15px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  h2.section-header {
+    font-size: 2.2em;
+  }
+
+  h3 {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 20px 10px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  h2.section-header {
+    font-size: 2em;
+  }
+
+  h3 {
+    font-size: 1.3em;
+  }
 }
 
 /* Utility class for visually hidden text (for accessibility) */

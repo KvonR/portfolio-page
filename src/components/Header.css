@@ -20,6 +20,10 @@ header.scrolled {
   border-bottom: 2px solid rgba(0, 240, 255, 0.8); /* Change to Neon Blue when scrolled */
 }
 
+nav {
+  position: relative;
+}
+
 nav ul {
   list-style-type: none;
   padding: 0;
@@ -42,25 +46,150 @@ nav ul li a {
   display: inline-block; /* Ensure transforms apply correctly */
 }
 
-nav ul li a:hover,
-nav ul li a.active /* Assuming an active class for current page */ {
-  color: #ff00ff; /* Hot Pink */
-  text-shadow: 0 0 8px #ff00ff, 0 0 12px #ff00ff, 0 0 2px #fff;
-  animation: glitch-effect 0.65s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94); /* ADDED glitch animation on hover */
+/* Mobile menu toggle button */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1001;
 }
 
-/* Add hover effect for all headings */
-h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
-  color: #ff00ff; /* Hot pink/purple color */
-  text-shadow: 0 0 15px rgba(255, 0, 255, 0.8),
-               0 0 30px rgba(255, 0, 255, 0.6);
-  transition: color 0.3s ease, text-shadow 0.3s ease;
+.mobile-menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: #00f0ff;
+  margin: 3px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+  box-shadow: 0 0 5px rgba(0, 240, 255, 0.5);
 }
 
-/* Add hover effect for section headers */
-.section-header:hover {
-  color: #ff00ff; /* Hot pink/purple color */
-  text-shadow: 0 0 15px rgba(255, 0, 255, 0.8),
-               0 0 30px rgba(255, 0, 255, 0.6);
-  transition: color 0.3s ease, text-shadow 0.3s ease;
+/* Hover effects only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  nav ul li a:hover,
+  nav ul li a.active /* Assuming an active class for current page */ {
+    color: #ff00ff; /* Hot Pink */
+    text-shadow: 0 0 8px #ff00ff, 0 0 12px #ff00ff, 0 0 2px #fff;
+    animation: glitch-effect 0.65s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94); /* ADDED glitch animation on hover */
+  }
+
+  /* Add hover effect for all headings */
+  h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
+    color: #ff00ff; /* Hot pink/purple color */
+    text-shadow: 0 0 15px rgba(255, 0, 255, 0.8),
+                 0 0 30px rgba(255, 0, 255, 0.6);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+
+  /* Add hover effect for section headers */
+  .section-header:hover {
+    color: #ff00ff; /* Hot pink/purple color */
+    text-shadow: 0 0 15px rgba(255, 0, 255, 0.8),
+                 0 0 30px rgba(255, 0, 255, 0.6);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+
+  .mobile-menu-toggle:hover span {
+    background-color: #ff00ff;
+    box-shadow: 0 0 8px rgba(255, 0, 255, 0.7);
+  }
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  header {
+    padding: 15px 20px;
+  }
+
+  header.scrolled {
+    padding: 10px 20px;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  nav ul {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background-color: rgba(5, 10, 25, 0.98);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 50px;
+    transition: left 0.3s ease;
+    backdrop-filter: blur(10px);
+    border-top: 2px solid rgba(0, 240, 255, 0.3);
+  }
+
+  nav ul.mobile-menu-open {
+    left: 0;
+  }
+
+  nav ul li {
+    margin: 20px 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  nav ul li a {
+    font-size: 1.3em;
+    padding: 15px 20px;
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 240, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  /* Mobile-specific active/tap states instead of hover */
+  nav ul li a:active,
+  nav ul li a:focus {
+    color: #ff00ff;
+    background-color: rgba(255, 0, 255, 0.1);
+    text-shadow: 0 0 8px #ff00ff;
+  }
+
+  /* Hamburger menu animation when open */
+  nav ul.mobile-menu-open ~ .mobile-menu-toggle span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+    background-color: #ff00ff;
+  }
+
+  nav ul.mobile-menu-open ~ .mobile-menu-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  nav ul.mobile-menu-open ~ .mobile-menu-toggle span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+    background-color: #ff00ff;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 12px 15px;
+  }
+
+  nav ul li a {
+    font-size: 1.2em;
+    padding: 12px 15px;
+  }
+
+  .mobile-menu-toggle {
+    right: 15px;
+  }
+
+  .mobile-menu-toggle span {
+    width: 22px;
+  }
 }
