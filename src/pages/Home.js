@@ -47,8 +47,24 @@ const Home = () => {
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    
+    // Set canvas size based on device type
+    const updateCanvasSize = () => {
+      if (isMobile) {
+        // On mobile, constrain canvas to home section only
+        const homeSection = document.getElementById('home');
+        if (homeSection) {
+          canvas.width = homeSection.offsetWidth;
+          canvas.height = homeSection.offsetHeight;
+        }
+      } else {
+        // On desktop, use full viewport
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+    };
+
+    updateCanvasSize();
 
     const particles = [];
     const colors = [ '#ff00ff', '#00ccff'];
@@ -90,7 +106,9 @@ const Home = () => {
     }
 
     function initParticles() {
-      for (let i = 0; i < 100; i++) {
+      // Reduce particle count on mobile for better performance
+      const particleCount = isMobile ? 50 : 100;
+      for (let i = 0; i < particleCount; i++) {
         const radius = Math.random() * 3 + 2;
         const x = Math.random() * canvas.width;
         const y = Math.random() * canvas.height;
@@ -109,8 +127,7 @@ const Home = () => {
     animate();
 
     const handleResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      updateCanvasSize();
       particles.length = 0;
       initParticles();
     };
@@ -120,7 +137,7 @@ const Home = () => {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [isMobile]); // Add isMobile as dependency
 
   return (
     <section id="home">

@@ -220,6 +220,13 @@
   background: #000;
 }
 
+/* Mobile canvas adjustments */
+@media (max-width: 768px) {
+  .neon-canvas {
+    background: transparent; /* Make background transparent on mobile to show App.css background */
+  }
+}
+
 /* Split color effect styles for main title */
 .home-content h1 .blue-half {
   color: #00f0ff; /* Neon blue */
@@ -400,6 +407,8 @@
     justify-content: center;
     align-items: center;
     gap: 30px; /* Add consistent spacing between elements */
+    position: relative; /* Ensure home section is positioned for canvas containment */
+    overflow: hidden; /* Prevent canvas from spilling outside */
   }
 
   .home-content {
