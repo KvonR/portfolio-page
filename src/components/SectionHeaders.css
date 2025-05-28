@@ -21,6 +21,18 @@
   white-space: nowrap;
 }
 
+/* Static mobile classes for "my" headers - no animations or hover effects */
+.mobile-blue-word-static {
+  color: #00f0ff; /* Neon blue */
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.8),
+               0 0 20px rgba(0, 240, 255, 0.6);
+  display: inline-block;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 0.2em;
+  white-space: nowrap;
+  /* No animation for static version */
+}
+
 .mobile-word-spacer {
   display: inline-block;
   width: 0.2em; 
@@ -37,6 +49,17 @@
   letter-spacing: 0.2em;
   animation: mobile-purple-pulse 1.5s infinite alternate;
   white-space: nowrap;
+}
+
+.mobile-purple-words-static {
+  color: #ff00ff; /* Neon purple */
+  text-shadow: 0 0 10px rgba(255, 0, 255, 0.8),
+               0 0 20px rgba(255, 0, 255, 0.6);
+  display: inline-block;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 0.2em;
+  white-space: nowrap;
+  /* No animation for static version */
 }
 
 @keyframes mobile-blue-pulse {
@@ -465,6 +488,36 @@
   .section-header.glitch.mobile-split-applied:hover::after {
     display: none !important;
     opacity: 0 !important;
+  }
+}
+
+/* Disable all interactive effects for static "my" headers on mobile */
+@media (max-width: 768px) {
+  .section-header.glitch.mobile-static-my-header {
+    pointer-events: none; /* Disable all touch/click events */
+  }
+  
+  .section-header.glitch.mobile-static-my-header:hover,
+  .section-header.glitch.mobile-static-my-header:active,
+  .section-header.glitch.mobile-static-my-header:focus {
+    /* Ensure no hover effects are applied */
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+  
+  .section-header.glitch.mobile-static-my-header::before,
+  .section-header.glitch.mobile-static-my-header::after {
+    /* Disable glitch pseudo-elements */
+    display: none !important;
+    animation: none !important;
+  }
+  
+  .section-header.glitch.mobile-static-my-header .mobile-blue-word-static,
+  .section-header.glitch.mobile-static-my-header .mobile-purple-words-static {
+    /* Ensure static colors stay static */
+    animation: none !important;
+    transition: none !important;
   }
 }
 

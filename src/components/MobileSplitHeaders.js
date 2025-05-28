@@ -31,13 +31,21 @@ const MobileSplitHeaders = () => {
         // Store original text
         element.setAttribute('data-original-mobile-text', originalText);
         
+        // Check if this is a "my" header (case-insensitive)
+        const isMyHeader = originalText.toLowerCase().startsWith('my ');
+        
         // Remove the glitch animation by removing ::before and ::after pseudo-elements
         // By setting these classes and modifying the content directly
         element.classList.add('no-glitch-mobile');
         
+        if (isMyHeader) {
+          // Add class to disable all interactive effects for "my" headers
+          element.classList.add('mobile-static-my-header');
+        }
+        
         // Create first word span (blue)
         const firstWord = document.createElement('span');
-        firstWord.className = 'mobile-blue-word';
+        firstWord.className = isMyHeader ? 'mobile-blue-word-static' : 'mobile-blue-word';
         firstWord.textContent = words[0];
         
         // Create spacer
@@ -47,7 +55,7 @@ const MobileSplitHeaders = () => {
         
         // Create remaining words span (purple)
         const remainingWords = document.createElement('span');
-        remainingWords.className = 'mobile-purple-words';
+        remainingWords.className = isMyHeader ? 'mobile-purple-words-static' : 'mobile-purple-words';
         remainingWords.textContent = words.slice(1).join(' ');
         
         // Clear element and add new structure
@@ -64,7 +72,9 @@ const MobileSplitHeaders = () => {
     // Apply split effect to all section headers
     sectionHeaders.forEach(header => {
       applySplitEffect(header);
-      console.log(`Applied split effect to: ${header.textContent.trim()}`);
+      const headerText = header.textContent.trim();
+      const isMyHeader = headerText.toLowerCase().startsWith('my ');
+      console.log(`Applied ${isMyHeader ? 'static' : 'animated'} split effect to: ${headerText}`);
     });
 
     // Log the total number of headers processed
@@ -81,6 +91,7 @@ const MobileSplitHeaders = () => {
             header.removeAttribute('data-original-mobile-text');
             header.classList.remove('mobile-split-applied');
             header.classList.remove('no-glitch-mobile');
+            header.classList.remove('mobile-static-my-header');
           }
         });
       }
