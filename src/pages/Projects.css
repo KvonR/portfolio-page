@@ -196,9 +196,11 @@
   .btn-view-project,
   .btn-coming-soon {
     padding: 8px 16px;
-    font-size: 0.95em;
-    width: 100%;
+    font-size: 0.9em;
+    width: auto;
+    max-width: 200px;
     text-align: center;
+    display: inline-block;
   }
 }
 

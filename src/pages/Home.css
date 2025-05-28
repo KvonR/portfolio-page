@@ -167,6 +167,28 @@
   transform: scale(1.05);
 }
 
+/* Active and focus states for touch devices */
+.btn:active,
+.btn:focus {
+  background: linear-gradient(45deg, #ff00ff, #d000ff); /* Gradient hot pink */
+  color: #FFFFFF; /* White text on pink */
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.8), 
+              0 0 30px rgba(255, 0, 255, 0.6);
+  transform: scale(1.05);
+  outline: none; /* Remove default focus outline */
+}
+
+/* Touch device specific styles */
+@media (hover: none) and (pointer: coarse) {
+  .btn:active {
+    background: linear-gradient(45deg, #ff00ff, #d000ff); /* Gradient hot pink */
+    color: #FFFFFF; /* White text on pink */
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.8), 
+                0 0 30px rgba(255, 0, 255, 0.6);
+    transform: scale(1.05);
+  }
+}
+
 /* Ensure the typewriter effect is above the canvas */
 .typewriter-animated {
   position: relative;
@@ -457,11 +479,14 @@
   }
 
   .btn {
-    padding: 12px 25px;
-    font-size: 1.1em;
+    padding: 10px 20px;
+    font-size: 1em;
     margin: 0; /* Remove margin since we're using gap */
     display: inline-block;
     text-align: center;
+    width: auto;
+    max-width: 280px;
+    white-space: nowrap;
   }
 
   /* Disable complex animations on mobile for better performance */
@@ -503,10 +528,11 @@
   }
 
   .btn {
-    padding: 10px 20px;
-    font-size: 1em;
-    width: 90%;
-    max-width: 300px;
+    padding: 8px 16px;
+    font-size: 0.9em;
+    width: auto;
+    max-width: 250px;
+    min-width: 120px;
   }
 }
 
@@ -532,6 +558,15 @@
     box-shadow: 0 0 10px rgba(0, 240, 255, 0.7), 
                 0 0 20px rgba(0, 240, 255, 0.5);
     transform: none;
+  }
+
+  /* But allow active state to show purple on touch */
+  .btn:active {
+    background: linear-gradient(45deg, #ff00ff, #d000ff) !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.8), 
+                0 0 30px rgba(255, 0, 255, 0.6) !important;
+    transform: scale(1.02) !important;
   }
 }
 
