@@ -224,7 +224,7 @@
 /* Mobile canvas adjustments */
 @media (max-width: 768px) {
   .neon-canvas {
-    background: transparent; /* Make background transparent on mobile to show App.css background */
+    background: #000; /* Keep the same black background as desktop */
   }
 }
 
