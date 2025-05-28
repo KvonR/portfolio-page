@@ -145,27 +145,39 @@
   }
 }
 
-/* Remove hover effects on touch devices */
+/* Only remove hover effects for section headers on touch devices */
 @media (hover: none) {
+  /* Keep hover effects intact for about me content */
   .about-me-image:hover {
-    transform: none;
-    box-shadow: 0 0 20px rgba(0, 240, 255, 0.5),
-                0 0 35px rgba(0, 240, 255, 0.3),
-                inset 0 0 15px rgba(0, 240, 255, 0.2);
-    border-color: #00f0ff;
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 0 30px rgba(255, 0, 255, 0.6),
+                0 0 50px rgba(255, 0, 255, 0.4),
+                inset 0 0 20px rgba(255, 0, 255, 0.3);
+    border-color: #ff00ff;
   }
 
   .highlight-text:hover {
-    text-shadow: none;
-    transform: none;
-    background: rgba(0, 30, 60, 0.3);
-    border-color: rgba(0, 240, 255, 0.5);
+    text-shadow: 0 0 15px rgba(0, 240, 255, 0.9), 
+                 0 0 20px rgba(0, 240, 255, 0.7),
+                 0 0 30px rgba(0, 240, 255, 0.5);
+    transform: scale(1.05);
+    background: rgba(0, 30, 60, 0.5);
+    border-color: rgba(0, 240, 255, 0.7);
   }
 
   .highlight-text.highlight-purple:hover {
-    text-shadow: none;
-    background: rgba(60, 0, 60, 0.3);
-    border-color: rgba(255, 0, 255, 0.5);
+    text-shadow: 0 0 15px rgba(255, 0, 255, 0.9), 
+                 0 0 20px rgba(255, 0, 255, 0.7),
+                 0 0 30px rgba(255, 0, 255, 0.5);
+    background: rgba(60, 0, 60, 0.5);
+    border-color: rgba(255, 0, 255, 0.7);
+  }
+  
+  /* Only section headers should have no hover effects */
+  #about-me h2.section-header:hover {
+    color: inherit !important;
+    text-shadow: none !important;
+    animation: none !important;
   }
 
   .intro-text:hover::after {

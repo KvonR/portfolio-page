@@ -19,7 +19,7 @@
 .home-content h1 {
   position: relative;
   color: #00f0ff;
-  font-size: 3em;
+  font-size: calc(2em + 1.5vw); /* Responsive font size based on viewport width */
   letter-spacing: 0.2em;
   font-family: 'Orbitron', sans-serif;
   font-weight: 600;
@@ -27,6 +27,7 @@
                2px 2px #ff00c1,
                -2px -2px #00fff9;
   animation: home-title-glow 2s ease-in-out infinite alternate;
+  max-width: 100%;
 }
 
 .home-content h1::before,
@@ -238,19 +239,21 @@
   font-family: 'Orbitron', sans-serif; /* Ensure font consistency */
   font-weight: 600;
   letter-spacing: 0.2em;
+  font-size: inherit; /* Inherit the responsive font size */
 }
 
 /* Mobile-specific title styling */
 .home-content h1.mobile-title {
   position: relative;
   color: #ffffff;
-  font-size: 1.8em; /* Smaller size */
+  font-size: calc(1.5em + 1vw); /* Responsive font size based on viewport width */
   letter-spacing: 0.1em;
   font-family: 'Orbitron', sans-serif;
   font-weight: 600;
   text-align: center;
   margin-bottom: 20px;
-  line-height: 1.2;
+  line-height: 1.3;
+  max-width: 100%;
 }
 
 .home-content h1.mobile-title .title-line {
@@ -288,6 +291,7 @@
   font-family: 'Orbitron', sans-serif; /* Ensure font consistency */
   font-weight: 600;
   letter-spacing: 0.2em;
+  font-size: inherit; /* Inherit the responsive font size */
 }
 
 /* Pulse animations for each half */
@@ -397,6 +401,18 @@
   }
 }
 
+/* Add responsive sizing for word spacers */
+.home-content h1 .word-spacer {
+  width: calc(0.2em + 0.1vw);
+  display: inline-block;
+}
+
+@media (min-width: 1200px) {
+  .home-content h1 .word-spacer {
+    width: calc(0.3em + 0.15vw);
+  }
+}
+
 /* Mobile responsive styles */
 @media (max-width: 768px) {
   #home {
@@ -421,13 +437,13 @@
   }
 
   .home-content h1 {
-    font-size: 2.2em;
+    font-size: calc(1.8em + 1.2vw); /* Adjusted responsive size for tablets */
     letter-spacing: 0.1em;
     margin-bottom: 30px; /* Increased spacing after title */
   }
 
   .home-content h1.mobile-title {
-    font-size: 1.6em; /* Smaller for mobile title */
+    font-size: calc(1.4em + 1vw); /* Adjusted for mobile title */
     margin-bottom: 30px; /* Consistent spacing */
     line-height: 1.3;
   }
@@ -469,14 +485,15 @@
   }
 
   .home-content h1 {
-    font-size: 1.8em;
+    font-size: calc(1.6em + 1vw); /* Enhanced responsive sizing for small devices */
     letter-spacing: 0.05em;
     margin-bottom: 25px;
   }
 
   .home-content h1.mobile-title {
-    font-size: 1.4em; /* Smaller for mobile title */
+    font-size: calc(1.2em + 1vw); /* Enhanced responsive sizing for mobile title */
     margin-bottom: 25px;
+    line-height: 1.4;
   }
 
   .home-content p {
@@ -515,5 +532,123 @@
     box-shadow: 0 0 10px rgba(0, 240, 255, 0.7), 
                 0 0 20px rgba(0, 240, 255, 0.5);
     transform: none;
+  }
+}
+
+/* Large screen enhancements for tagline */
+@media (min-width: 1200px) {
+  .home-content h1 {
+    font-size: calc(2.5em + 1.8vw); /* Bigger font for large screens */
+  }
+}
+
+@media (min-width: 1600px) {
+  .home-content h1 {
+    font-size: calc(3em + 2vw); /* Even bigger for extra large screens */
+    letter-spacing: 0.25em;
+  }
+}
+
+/* Update period size to match larger text */
+@media (min-width: 1200px) {
+  .home-content h1 .period {
+    transform-origin: center;
+    display: inline-block;
+    font-size: 1.05em;
+  }
+}
+
+/* Permanent split-color effect without glitch */
+.split-color-permanent {
+  position: relative;
+  font-size: calc(2em + 1.5vw); /* Responsive font size based on viewport width */
+  letter-spacing: 0.2em;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* No ::before and ::after pseudo-elements for the permanent split color version */
+.split-color-permanent::before,
+.split-color-permanent::after {
+  display: none;
+  animation: none;
+  content: none;
+}
+
+/* Blue half styling */
+.split-color-permanent .blue-half {
+  color: #00f0ff; /* Neon blue */
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.8),
+               0 0 20px rgba(0, 240, 255, 0.6);
+  display: inline-block;
+  animation: blue-pulse 1.5s infinite alternate;
+  font-family: 'Orbitron', sans-serif;
+  font-size: inherit;
+}
+
+/* Purple half styling */
+.split-color-permanent .purple-half {
+  color: #ff00ff; /* Neon purple */
+  text-shadow: 0 0 10px rgba(255, 0, 255, 0.8),
+               0 0 20px rgba(255, 0, 255, 0.6);
+  display: inline-block;
+  animation: purple-pulse 1.5s infinite alternate;
+  font-family: 'Orbitron', sans-serif;
+  font-size: inherit;
+  margin-left: 0.2em; /* Add spacing between the halves */
+}
+
+/* Period styling for permanent split color title */
+.split-color-permanent .period {
+  display: inline-block;
+  transform-origin: center;
+  animation: period-pulse 2s infinite alternate ease-in-out;
+}
+
+.split-color-permanent .blue-half .period {
+  color: #00f0ff;
+  text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
+}
+
+.split-color-permanent .purple-half .period {
+  color: #ff00ff;
+  text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+}
+
+/* Mobile adjustments for permanent split-color title */
+@media (max-width: 768px) {
+  .split-color-permanent {
+    font-size: calc(1.8em + 1.2vw); /* Adjusted responsive size for tablets */
+    letter-spacing: 0.1em;
+    margin-bottom: 30px;
+  }
+  
+  .split-color-permanent.mobile-title {
+    font-size: calc(1.4em + 1vw);
+  }
+  
+  /* Reduce animation for better performance */
+  .split-color-permanent .blue-half,
+  .split-color-permanent .purple-half {
+    animation: none;
+  }
+  
+  .split-color-permanent .period {
+    animation: period-pulse 3s infinite alternate ease-in-out; /* Slower animation on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .split-color-permanent {
+    font-size: calc(1.6em + 1vw);
+  }
+  
+  .split-color-permanent.mobile-title {
+    font-size: calc(1.2em + 1vw);
   }
 }
