@@ -105,11 +105,11 @@ const Contact = () => {
           </p>
           <p className="contact-item">
             <FontAwesomeIcon icon={faLinkedin} className="contact-icon" />
-            <a href="https://www.linkedin.com/in/rkev/">linkedin.com/in/rkev</a>
+            <a href="https://www.linkedin.com/in/rkev/" target="_blank" rel="noopener noreferrer">linkedin.com/in/rkev</a>
           </p>
           <p className="contact-item">
             <FontAwesomeIcon icon={faGithub} className="contact-icon" />
-            <a href="https://github.com/kvonr">github.com/kvonr</a>
+            <a href="https://github.com/kvonr" target="_blank" rel="noopener noreferrer">github.com/kvonr</a>
           </p>
         </div>
       </Parallax>

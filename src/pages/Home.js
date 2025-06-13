@@ -80,6 +80,7 @@ const Home = () => {
       }
 
       draw() {
+        if (!ctx) return; // Safety check for testing environments
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
         ctx.fillStyle = this.color;
@@ -93,11 +94,11 @@ const Home = () => {
         this.x += this.dx;
         this.y += this.dy;
 
-        if (this.x - this.radius < 0 || this.x + this.radius > canvas.width) {
+        if (canvas && (this.x - this.radius < 0 || this.x + this.radius > canvas.width)) {
           this.dx = -this.dx;
         }
 
-        if (this.y - this.radius < 0 || this.y + this.radius > canvas.height) {
+        if (canvas && (this.y - this.radius < 0 || this.y + this.radius > canvas.height)) {
           this.dy = -this.dy;
         }
 
@@ -118,13 +119,17 @@ const Home = () => {
     }
 
     function animate() {
+      if (!ctx) return; // Safety check for testing environments
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       particles.forEach((particle) => particle.update());
       requestAnimationFrame(animate);
     }
 
-    initParticles();
-    animate();
+    // Only initialize if canvas context is available
+    if (ctx) {
+      initParticles();
+      animate();
+    }
 
     const handleResize = () => {
       updateCanvasSize();
@@ -169,7 +174,7 @@ const Home = () => {
             className="subtitle-text" 
             style={orbitronStyle}
           >
-            Hi, I'm Kev — a Web & Software Developer.
+            Kev R | Full-Stack Developer Specializing in Clean, Scalable Architecture.
           </p>
         ) : (
           <Parallax speed={5}>
@@ -206,7 +211,7 @@ const Home = () => {
                 });
               }}
             >
-              Hi, I'm Kev — a Web & Software Developer.
+            Kev R | Full-Stack Developer Specializing in Clean, Scalable Architecture.
             </p>
           </Parallax>
         )}

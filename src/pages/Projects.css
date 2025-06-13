@@ -34,10 +34,13 @@
   background-color: rgba(10, 10, 30, 0.85); /* Darker, more opaque background */
   border: 1px solid #00f0ff;
   border-radius: 8px;
-  padding: 30px;
+  padding: 25px 30px 20px 30px; /* Restored to original bottom padding */
   box-shadow: 0 0 15px rgba(0, 240, 255, 0.3), 0 0 30px rgba(0, 240, 255, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ensure all items have same height */
 }
 
 .project-item:hover {
@@ -111,6 +114,7 @@
   font-family: 'Orbitron', sans-serif;
   font-weight: 400;
   letter-spacing: 0.03em;
+  flex: 1; /* Take up available space to push button to bottom */
 }
 
 .btn-view-project {
@@ -126,6 +130,8 @@
   letter-spacing: 0.5px;
   transition: box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
   box-shadow: 0 0 8px rgba(0, 240, 255, 0.6);
+  margin-top: auto; /* Push button to bottom */
+  align-self: center; /* Center the button */
 }
 
 .btn-view-project:hover {
@@ -150,6 +156,8 @@
   cursor: not-allowed;
   box-shadow: 0 0 5px rgba(150, 150, 170, 0.3);
   transition: box-shadow 0.3s ease;
+  margin-top: auto; /* Push button to bottom */
+  align-self: center; /* Center the button */
 }
 
 .btn-coming-soon:hover {
@@ -175,6 +183,9 @@
 
   .project-item {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: auto; /* Allow natural height on mobile */
   }
 
   .project-item h3 {
@@ -229,6 +240,9 @@
 
   .project-item {
     padding: 15px;
+    display: flex;
+    flex-direction: column;
+    height: auto; /* Allow natural height on mobile */
   }
 
   .project-item h3 {

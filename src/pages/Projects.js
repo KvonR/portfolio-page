@@ -12,20 +12,20 @@ const Projects = () => {
   const projectList = [
     {
       title: 'TrainAIn',
-      description: 'AI fitness body analyzer with GPT Vision on React Native, emulating a personal trainer for real-time feedback and guidance.',
+      description: 'An AI-powered fitness analyzer built in React Native using GPT Vision. Provides real-time feedback, posture guidance, and personalized workout suggestions through body photo analysis, demonstrating mobile development and AI integration expertise.',
       imageUrl: trainAInImage,
       link: 'https://github.com/kvonr/trainain',
       comingSoon: true
     },
     {
       title: 'Retrosonic',
-      description: 'A JavaFX music player I built with advanced playlist management and audio visualization.',
+      description: 'A sleek JavaFX music player built from scratch with advanced playlist management, real-time audio visualizations, and metadata editing. Focused on usability and performance, demonstrating expertise in Java and desktop application development.',
       imageUrl: retrosonicImage,
       link: 'https://github.com/kvonr/retrosonic'
     },
     {
       title: 'Robotics Algorithm',
-      description: 'A wall-following algorithm for a robotic floor hoover, designed for efficient cleaning.',
+      description: 'A Java robotics simulation implementing Bug 1 and Bug 2 pathfinding algorithms. Models a 2D environment where robots navigate toward goals while avoiding obstacles using minimal sensory input, demonstrating autonomous navigation and algorithm design.',
       imageUrl: roboticsImage,
       link: 'https://github.com/KvonR/Bug1-2-Algorithm'
     }

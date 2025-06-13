@@ -13,7 +13,7 @@ const Experience = () => {
       company: 'WebTicketManager',
       date: 'Feb 2024 - Present',
       location: 'Cheshire East, England, United Kingdom · Remote',
-      description: 'Worked on projects every few months using PHP, ensuring top notch code quality and operational efficiency while collaborating with a team of expert developers. Worked on databases with SQL. Worked as a consultant working along side stakeholders to create CMS projects from scratch.',
+      description: 'Collaborated on a per-project basis using PHP, delivering high-quality, efficient code within a team of expert developers. Contributed to SQL database design and optimization. Acted as a technical consultant, working closely with stakeholders to plan and develop custom CMS solutions from the ground up.',
       skills: ['PHP', 'SQL', 'CMS Development', 'Stakeholder Management', 'Code Quality', 'Operational Efficiency']
     },
     {

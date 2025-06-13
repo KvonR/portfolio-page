@@ -687,3 +687,10 @@
     font-size: calc(1.2em + 1vw);
   }
 }
+
+/* Desktop-only button positioning - move button higher */
+@media (min-width: 769px) {
+  .home-button-parallax-wrapper {
+    margin-top: -50px; /* Move the button 50px higher on desktop */
+  }
+}
