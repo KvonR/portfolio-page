@@ -1,10 +1,8 @@
 import React from 'react';
 import './Experience.css';
 import { Parallax } from 'react-scroll-parallax';
-import useMobileDetection from '../hooks/useMobileDetection';
 
 const Experience = () => {
-  const isMobile = useMobileDetection();
   
   const experiences = [
     {

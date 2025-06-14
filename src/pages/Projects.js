@@ -4,10 +4,8 @@ import retrosonicImage from '../assets/retrosonic.png';
 import roboticsImage from '../assets/Robotics.png';
 import trainAInImage from '../assets/TrainAIn.png';
 import { Parallax } from 'react-scroll-parallax';
-import useMobileDetection from '../hooks/useMobileDetection';
 
 const Projects = () => {
-  const isMobile = useMobileDetection();
   
   const projectList = [
     {

@@ -1,10 +1,8 @@
 import React from 'react';
 import './Skills.css';
 import { Parallax } from 'react-scroll-parallax'; // ADDED
-import useMobileDetection from '../hooks/useMobileDetection';
 
 const Skills = () => {
-  const isMobile = useMobileDetection();
   
   const skillCategories = {
     'Frontend Development': [
