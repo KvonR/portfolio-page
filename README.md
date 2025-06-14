@@ -1,53 +1,109 @@
-# Getting Started with Create React App
+# Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive portfolio website built with React, showcasing my projects, skills, and experience as a full-stack developer.
 
-## Available Scripts
+## 🌟 Features
 
-In the project directory, you can run:
+- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
+- **Interactive UI**: Smooth parallax scrolling and glitch text effects
+- **Modern Stack**: Built with React 18 and modern JavaScript
+- **Performance Optimized**: Fast loading times with optimized assets
+- **Comprehensive Testing**: 100% test coverage with Jest and React Testing Library
+- **Accessibility**: WCAG compliant with proper semantic HTML
 
-### `npm start`
+## 🛠️ Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend**: React 18, JavaScript (ES6+)
+- **Styling**: CSS3 with custom animations and responsive design
+- **Testing**: Jest, React Testing Library
+- **Build Tool**: Create React App
+- **Deployment**: Vercel
+- **Version Control**: Git
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚀 Quick Start
 
-### `npm test`
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installation
 
-### `npm run build`
+1. Clone the repository:
+```bash
+git clone https://github.com/kvonr/portfolio-website.git
+cd portfolio-website
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Install dependencies:
+```bash
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Start the development server:
+```bash
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### `npm run eject`
+## 📝 Available Scripts
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- `npm start` - Runs the app in development mode
+- `npm test` - Launches the test runner in interactive watch mode
+- `npm run build` - Builds the app for production
+- `npm run eject` - Ejects from Create React App (one-way operation)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🧪 Testing
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The project includes comprehensive test coverage:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm test
+```
 
-## Learn More
+Test suites include:
+- Component rendering tests
+- User interaction tests
+- Mobile responsiveness tests
+- Integration tests
+- End-to-end functionality tests
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📱 Sections
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Home**: Hero section with introduction and call-to-action
+- **About Me**: Personal background and technical expertise
+- **Experience**: Professional work history and achievements
+- **Projects**: Showcase of key projects with live demos
+- **Skills**: Technical skills organized by category
+- **Contact**: Contact form and social media links
 
-### Code Splitting
+## 🎨 Key Projects Featured
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. **TrainAIn** - AI-powered fitness analyzer using React Native and GPT Vision
+2. **Retrosonic** - JavaFX music player with advanced playlist management
+3. **Robotics Algorithm** - Java simulation implementing Bug 1/Bug 2 pathfinding
+
+## 🌐 Deployment
+
+The site is deployed on Vercel with automatic deployments from the main branch.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🤝 Contributing
+
+While this is a personal portfolio, suggestions and feedback are welcome! Please feel free to open an issue or reach out directly.
+
+## 📧 Contact
+
+- **Email**: [Your Email]
+- **LinkedIn**: [Your LinkedIn]
+- **GitHub**: [Your GitHub]
+
+---
+
+Built with ❤️ using React
 
 ### Analyzing the Bundle Size
 
