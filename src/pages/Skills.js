@@ -23,7 +23,7 @@ const Skills = () => {
       'Python',
       'Java'
     ],
-    'Database': [
+    'Database Skills': [
       'PostgreSQL',
       'MySQL',
       'Firebase',
