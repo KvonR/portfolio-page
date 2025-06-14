@@ -10,7 +10,7 @@
   text-align: center;
   padding: 60px 20px;
   background-color: transparent; /* Show main App.css background */
-  min-height: 90vh;
+  min-height: 100vh; /* Changed from 90vh to 100vh */
   border-bottom: none;
   font-family: 'Orbitron', sans-serif;
 }
@@ -438,7 +438,7 @@
 /* Mobile responsive styles */
 @media (max-width: 768px) {
   #home {
-    min-height: 80vh;
+    min-height: 100vh; /* Changed from 80vh to 100vh */
     padding: 40px 15px;
     display: flex;
     flex-direction: column;
@@ -505,7 +505,7 @@
 @media (max-width: 480px) {
   #home {
     padding: 30px 10px;
-    min-height: 70vh;
+    min-height: 100vh; /* Changed from 70vh to 100vh */
     gap: 25px; /* Smaller gap for phones */
   }
 
